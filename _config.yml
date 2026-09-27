@@ -23,7 +23,7 @@ repository               : "YOUR-GITHUB-USERNAME/YOUR-GITHUB-USERNAME.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : # "profile.png"  add images/profile.png later, then uncomment
   name             : "Onki (Angie) Wong"
   pronouns         : # example: "she/her"  
   bio              : "Results measurement, AI and portfolio analytics for development finance"
@@ -308,7 +308,6 @@ plugins:
   - jekyll-feed
   - jekyll-gist
   - jekyll-paginate
-  - jekyll-sitemap
   - jekyll-redirect-from
   - jemoji
 
@@ -317,7 +316,6 @@ whitelist:
   - jekyll-feed
   - jekyll-gist
   - jekyll-paginate
-  - jekyll-sitemap
   - jekyll-redirect-from
   - jemoji
 
