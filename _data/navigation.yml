@@ -1,0 +1,12 @@
+main:
+  - title: "Projects"
+    url: /portfolio/
+
+  - title: "Publications"
+    url: /publications/
+
+  - title: "Engagement"
+    url: /talks/
+
+  - title: "CV"
+    url: /cv/
