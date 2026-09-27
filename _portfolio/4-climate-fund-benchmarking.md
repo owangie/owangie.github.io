@@ -1,16 +1,9 @@
 ---
-title: "Benchmarking disbursement across climate funds"
-excerpt: "Comparing how fast four multilateral climate funds turn approvals into disbursements, using harmonised public portfolio data."
+title: "Disbursement across climate funds"
+excerpt: "A comparison of disbursement performance across four multilateral climate funds."
 collection: portfolio
 ---
 
-**Question.** Is the Green Climate Fund slower or faster than its peers at getting approved money out the door?
+A comparison of disbursement across the Green Climate Fund, Adaptation Fund, Climate Investment Funds and Global Environment Facility, using project level data harmonised across the four funds.
 
-**Approach**
-* Harmonised project level data from the GCF, Adaptation Fund, Climate Investment Funds and Global Environment Facility
-* Built comparable definitions of approval, commitment and disbursement across funds with different reporting systems
-* Visualised disbursement curves by fund, sector and year of approval
-
-**Why it matters for outcomes work.** Comparing indicators across institutions is mostly a definitions problem. This project was about making non comparable data comparable, which is the core of cross MDB outcome alignment.
-
-*Tools: Python, pandas, matplotlib*
+*Python, pandas, matplotlib*

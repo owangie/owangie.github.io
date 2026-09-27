@@ -1,16 +1,9 @@
 ---
-title: "Machine coding of 15,000+ evaluation reports"
-excerpt: "NLP and machine learning to code and synthesise UNDP's evaluation evidence base for corporate reporting and portfolio analysis."
+title: "Text analysis of UNDP evaluation reports"
+excerpt: "Machine coding and synthesis of more than 15,000 evaluation reports."
 collection: portfolio
 ---
 
-**Problem.** UNDP holds thousands of decentralised evaluation reports. The findings existed, but nobody could query them across countries or themes.
+Automated the coding and synthesis of more than 15,000 UNDP evaluation reports using NLP and machine learning, for use in corporate reporting, portfolio analysis and performance monitoring.
 
-**What I built**
-* A Python and R workflow that ingests evaluation reports, extracts text and codes it against thematic and performance categories
-* Machine learning and NLP models that scale the coding beyond what a team could do by hand
-* Outputs linked into corporate reporting, portfolio analysis and performance monitoring
-
-**Result.** More than 15,000 reports coded, giving M&E and evaluation specialists an evidence base they could filter and aggregate.
-
-*Tools: Python, R, NLP, machine learning*
+*Python, R, NLP, machine learning*

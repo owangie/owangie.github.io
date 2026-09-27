@@ -1,14 +1,11 @@
 ---
-title: "Corporate results dashboards for UNDP"
-excerpt: "30+ enterprise Power BI dashboards tracking programme performance, COVID-19 response, evaluation results and SDG progress."
+title: "UNDP corporate dashboards"
+excerpt: "Power BI dashboards on programme performance, evaluation results and SDG progress."
 collection: portfolio
 ---
 
-**What I built**
-* 30+ Power BI dashboards used by UNDP country offices and headquarters
-* Integrated corporate data from ATLAS and Quantum (finance and project systems), Results Oriented Annual Reports and evaluation evidence
-* Coverage: programme performance, COVID-19 response, evaluation results and SDG progress
+Developed more than 30 Power BI dashboards used across UNDP country offices, covering programme performance, the COVID-19 response, evaluation results and SDG progress. Data drawn from ATLAS and Quantum, Results Oriented Annual Reports and evaluation records.
 
-**Detail assignment to UNOSSC.** Over eight months I set up an in house analytics function at the UN Office for South-South Cooperation: portfolio and donor contribution dashboards for two major trust funds, and training for six staff in data analysis, visualisation and results monitoring.
+During a detail assignment to the UN Office for South-South Cooperation, built portfolio and donor contribution dashboards for two trust funds and trained six staff.
 
-*Tools: Power BI, SQL, Python, R*
+*Power BI, Python, R*

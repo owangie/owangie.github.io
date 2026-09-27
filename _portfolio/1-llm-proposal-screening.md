@@ -1,17 +1,9 @@
 ---
-title: "AI screening of a climate finance portfolio"
-excerpt: "An LLM pipeline that reads every GCF funding proposal and classifies it against evaluation criteria, with an audit trail a human reviewer can check."
+title: "LLM screening of GCF funding proposals"
+excerpt: "A pipeline that uses large language models to classify funding proposals against evaluation criteria."
 collection: portfolio
 ---
 
-**Problem.** An evaluation needed to identify which projects in a portfolio of several hundred funding proposals met a set of private sector criteria. Manual review would take months and be hard to reproduce.
+A Python pipeline on Azure AI Foundry that reads GCF funding proposals and classifies each against a written set of criteria, recording the supporting text for review. Developed for the Independent Evaluation of the GCF's Private Sector Approach and applied to the public sector portfolio.
 
-**What I built**
-* A Python pipeline on Azure AI Foundry that extracts the relevant sections of each proposal and asks a GPT model to apply a written codebook
-* Structured outputs with the quoted evidence behind each classification, so reviewers can verify rather than trust
-* A validation step against a manually coded sample, and fixes for failure modes found along the way (truncated documents, missing entity information)
-* Scaled from a pilot to the full public sector portfolio
-
-**Why it matters for outcomes work.** The same design (codebook, extraction, evidence citation, human validation) applies to reading results frameworks in PADs, ISRs and ICRs at scale.
-
-*Tools: Python, Azure AI Foundry, GPT models, pandas, Git*
+*Python, Azure AI Foundry, GPT models*
