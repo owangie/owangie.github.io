@@ -23,7 +23,7 @@ repository               : "owangie/owangie.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : # "profile.png"  add images/profile.png later, then uncomment
+  avatar           : "profile.jpg"
   name             : "Onki (Angie) Wong"
   pronouns         : # example: "she/her"  
   bio              : "Results measurement, AI and portfolio analytics for development finance"
