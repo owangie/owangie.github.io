@@ -46,7 +46,7 @@ where N(u) is the set of u's neighbours, then intersect it with the rest of the 
 
 $$N_2(u) \,\cap\, (S \setminus \{u\}) = \varnothing \;\Rightarrow\; u \text{ is isolated}$$
 
-Breadth-first search costs $$O(|V| + |E|)$$: every country and every border is looked at once.
+Breadth-first search costs $$O(vert V vert + vert E vert)$$: every country and every border is looked at once.
 
 The interactive graph is drawn with [pyvis](https://pyvis.readthedocs.io/), a Python wrapper around the vis-network JavaScript library. Its layout is a physics simulation: edges pull connected countries together like springs, and all nodes push each other apart, until the picture settles. That is why neighbouring regions end up clustered.
 
