@@ -227,10 +227,10 @@
     <ul class="list reveal">
       {% for t in site.talks reversed %}
       <li>
-        <span class="yr">{% unless t.hide_date %}{{ t.date | date: "%Y" }}{% endunless %}</span>
+        <span class="yr">{% if t.year %}{{ t.year }}{% elsif t.hide_date %}{% else %}{{ t.date | date: "%Y" }}{% endif %}</span>
         <span>
           {% if t.link %}<a class="t" href="{{ t.link }}">{{ t.title }}</a>{% else %}<span class="t">{{ t.title }}</span>{% endif %}
-          <span class="sub">{{ t.venue }}{% if t.link %} · <a href="{{ t.link }}">Slides</a>{% endif %}</span>
+          <span class="sub">{{ t.content | strip_html | strip | split: "View the slides" | first | strip }}{% if t.link %} <a href="{{ t.link }}">View the slides</a>{% endif %}</span>
         </span>
       </li>
       {% endfor %}
