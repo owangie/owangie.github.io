@@ -10,11 +10,11 @@
 - id: "22701053"
   type: treemap
   title: "Finance by GCF results area"
-  caption: "GCF financing broken down by results area, prepared for the 2025 Independent Evaluation of the Simplified Approval Process."
+  caption: "Financing in the Simplified Approval Process portfolio by GCF results area, split into adaptation and mitigation. Prepared for the 2025 Independent Evaluation of the Simplified Approval Process."
 - id: "24566148"
   type: chart
-  title: "Financing trends for the Country Ownership evaluation"
-  caption: "GCF financing over time, prepared for the 2025 Independent Evaluation of the GCF Approach to Country Ownership."
+  title: "GCF portfolio over time"
+  caption: "Growth of the GCF portfolio over time, prepared for the 2025 Independent Evaluation of the GCF Approach to Country Ownership."
 - id: "27526316"
   type: chart
   title: "Private sector share in grant equivalent terms"
