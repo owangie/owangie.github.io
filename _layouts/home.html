@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>{{ site.author.name }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fafaf9; --surface: #ffffff; --text: #18181b; --muted: #6b6b73;
+      --line: #e7e5e4; --accent: #2f5d50; --accent-soft: #e8f0ed;
+      color-scheme: light;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111113; --surface: #1a1a1d; --text: #ededef; --muted: #9b9ba3;
+        --line: #2a2a2e; --accent: #8cc4b1; --accent-soft: #1e2b27;
+        color-scheme: dark;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font: 400 16px/1.65 Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+    /* nav */
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 16px; }
+    nav .name { font-weight: 600; text-decoration: none; font-size: 15px; white-space: nowrap; }
+    nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 14px; }
+    nav ul a { text-decoration: none; color: var(--muted); transition: color .2s; }
+    nav ul a:hover { color: var(--text); }
+    @media (max-width: 620px) { nav ul { gap: 14px; } nav ul li.opt { display: none; } }
+
+    /* hero */
+    .hero { padding: 96px 0 56px; }
+    .hero h1 { font-size: clamp(30px, 5vw, 42px); line-height: 1.15; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 16px; }
+    .hero p { font-size: 17px; color: var(--muted); max-width: 600px; margin: 0 0 28px; }
+    .pill { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted);
+      border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; margin-bottom: 24px; background: var(--surface); }
+    .pill i { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); display: inline-block; }
+    .btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 10px 18px; border-radius: 10px; font-size: 14px; font-weight: 500; text-decoration: none;
+      border: 1px solid var(--line); background: var(--surface); transition: transform .2s, border-color .2s; }
+    .btn:hover { transform: translateY(-1px); border-color: var(--muted); }
+    .btn.primary { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+    /* sections */
+    section { padding: 56px 0; border-top: 1px solid var(--line); }
+    .label { font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin: 0 0 8px; }
+    h2 { font-size: 24px; font-weight: 600; letter-spacing: -0.01em; margin: 0 0 12px; }
+    .intro { color: var(--muted); max-width: 640px; margin: 0 0 28px; }
+    .prose p { margin: 0 0 16px; max-width: 680px; }
+
+    /* cards */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 22px;
+      transition: transform .25s, box-shadow .25s, border-color .25s; }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,.06); border-color: var(--muted); }
+    .card h3 { font-size: 16px; font-weight: 600; margin: 0 0 8px; line-height: 1.35; }
+    .card p { font-size: 14px; color: var(--muted); margin: 0 0 8px; }
+    .card p:last-child { margin-bottom: 0; }
+    .card em { font-style: normal; font-size: 12px; color: var(--accent); background: var(--accent-soft); padding: 2px 8px; border-radius: 6px; }
+    .card a { color: var(--accent); }
+
+    /* lists */
+    .list { list-style: none; margin: 0; padding: 0; }
+    .list li { display: grid; grid-template-columns: 64px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+    .list li:last-child { border-bottom: 0; }
+    .list .yr { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; padding-top: 1px; }
+    .list a.t { font-weight: 500; text-decoration: none; }
+    .list a.t:hover { text-decoration: underline; }
+    .list .sub { display: block; font-size: 14px; color: var(--muted); margin-top: 2px; }
+    .tag { font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 1px 7px; margin-left: 6px; white-space: nowrap; }
+
+    footer { padding: 40px 0 56px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
+
+    /* reveal on scroll */
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="name" href="#top">{{ site.author.name }}</a>
+    <ul>
+      <li class="opt"><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li class="opt"><a href="#engagement">Engagement</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap" id="top">
+
+  <header class="hero reveal">
+    <span class="pill"><i></i>{{ site.author.employer }}</span>
+    <h1>{{ site.author.name }}</h1>
+    <p>I work on measuring results in development and climate finance, and on using data science and AI to do that work better.</p>
+    <div class="btns">
+      <a class="btn primary" href="#projects">See projects</a>
+      <a class="btn" href="https://www.linkedin.com/in/{{ site.author.linkedin }}/">LinkedIn</a>
+    </div>
+  </header>
+
+  <section id="about" class="reveal">
+    <p class="label">About</p>
+    <h2>About me</h2>
+    <div class="prose">{{ content }}</div>
+  </section>
+
+  <section id="projects">
+    <p class="label reveal">Projects</p>
+    <h2 class="reveal">Selected work</h2>
+    <p class="intro reveal">Tools and analyses built at the Green Climate Fund and UNDP. Some are finished; others are ongoing.</p>
+    <div class="grid">
+      {% for p in site.portfolio %}
+      <article class="card reveal">
+        <h3>{{ p.title }}</h3>
+        {{ p.content | markdownify }}
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section id="publications">
+    <p class="label reveal">Publications</p>
+    <h2 class="reveal">Reports and papers</h2>
+    <p class="intro reveal">Independent evaluation reports and working papers co-authored at the GCF Independent Evaluation Unit. These are team products; co-authors are named in each report.</p>
+    <ul class="list reveal">
+      {% assign pubs = site.publications | sort: "date" | reverse %}
+      {% for p in pubs %}
+      <li>
+        <span class="yr">{{ p.date | date: "%Y" }}</span>
+        <span>
+          <a class="t" href="{{ p.paperurl }}">{{ p.title }}</a>{% if p.category == "working" %}<span class="tag">Working paper</span>{% endif %}
+          <span class="sub">{{ p.excerpt | strip_html }}</span>
+        </span>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section id="engagement">
+    <p class="label reveal">Engagement</p>
+    <h2 class="reveal">Talks and seminars</h2>
+    <ul class="list reveal">
+      {% for t in site.talks reversed %}
+      <li>
+        <span class="yr">{% unless t.hide_date %}{{ t.date | date: "%Y" }}{% endunless %}</span>
+        <span>
+          {% if t.link %}<a class="t" href="{{ t.link }}">{{ t.title }}</a>{% else %}<span class="t">{{ t.title }}</span>{% endif %}
+          <span class="sub">{{ t.venue }}{% if t.link %} · <a href="{{ t.link }}">Slides</a>{% endif %}</span>
+        </span>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section id="contact" class="reveal">
+    <p class="label">Contact</p>
+    <h2>Get in touch</h2>
+    <p class="intro">The best way to reach me is on LinkedIn. My CV is available on request.</p>
+    <a class="btn primary" href="https://www.linkedin.com/in/{{ site.author.linkedin }}/">Message me on LinkedIn</a>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">{{ site.author.location }}</div>
+</footer>
+
+<script>
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.08 });
+    els.forEach(function (e) { io.observe(e); });
+  })();
+</script>
+</body>
+</html>
