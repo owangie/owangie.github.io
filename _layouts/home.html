@@ -219,6 +219,12 @@
     .facts h3 { font-family: var(--serif); font-weight: 400; font-size: 20px; }
     .facts li { font-size: 16px; }
     footer { font-family: var(--sans); text-transform: uppercase; letter-spacing: .12em; font-size: 11px; }
+    .eyebrow { font-family: var(--sans); text-transform: uppercase; letter-spacing: .22em; font-size: 12px; color: var(--gold); margin: 0 0 14px; }
+    details.toolkit { margin-top: 8px; }
+    details.toolkit > summary { list-style: none; cursor: pointer; display: inline-block; margin-bottom: 20px; }
+    details.toolkit > summary::-webkit-details-marker { display: none; }
+    details.toolkit[open] > summary { background: var(--accent-soft); }
+    details.toolkit .reveal { opacity: 1; transform: none; }
   </style>
 </head>
 <body>
@@ -227,11 +233,10 @@
   <div class="wrap">
     <a class="name" href="#top">{{ site.author.name }}</a>
     <ul>
-      <li><a href="#ai">AI</a></li>
-      <li><a href="#visuals">Visuals</a></li>
+      <li class="opt"><a href="#about">About</a></li>
+      <li><a href="#ai">Method</a></li>
+      <li><a href="#visuals">Collection</a></li>
       <li class="opt"><a href="#writing">Blog</a></li>
-      <li class="opt"><a href="#publications">Publications</a></li>
-      <li class="opt"><a href="#engagement">Engagement</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -241,10 +246,11 @@
 
   <header class="hero reveal">
     <div class="hero-text">
+    <p class="eyebrow">Data curator</p>
     <h1>{{ site.author.name }}</h1>
-    <p>I evaluate development and climate projects, mostly with code. I use language models to read project documents at scale, analyse portfolio data, and make charts for the people deciding where the money goes next.</p>
+    <p>A curator builds an object's history from evidence. I do the same for development projects: I gather the data, check it, and piece together whether the money did what it promised. Language models help me mine the text no team could read by hand.</p>
     <div class="btns">
-      <a class="btn primary" href="#projects">See projects</a>
+      <a class="btn primary" href="#visuals">See the collection</a>
       <a class="btn" href="https://www.linkedin.com/in/{{ site.author.linkedin }}/">LinkedIn</a>
       <a class="btn" href="https://github.com/{{ site.author.github }}">GitHub</a>
     </div>
@@ -271,13 +277,15 @@
   <section id="ai">
     <div class="shead">
     <p class="label reveal">AI in my work</p>
-    <h2 class="reveal">Teaching machines to read</h2>
+    <h2 class="reveal">How I curate</h2>
     </div>
     <div class="sbody">
-    <p class="intro reveal">Most of my AI work is getting language models to read documents that people would otherwise read one by one: project proposals, evaluation reports, survey answers. This is how I set it up, what I use, and what went wrong often enough to become a rule. There is a <a href="{{ site.baseurl }}/writing/llm-screening-private-sector/">worked example on the blog</a>.</p>
+    <p class="intro reveal">Much of the evidence about a project sits in long documents: proposals, progress reports, evaluations, survey answers. Language models are my tool for mining that text at scale, and a person checks what matters before anything is used. The steps are always the same. There is a <a href="{{ site.baseurl }}/writing/llm-screening-private-sector/">worked example on the blog</a>.</p>
     <ol class="flow reveal">
       {% for s in site.data.ai.pipeline %}<li><b>{{ s.step }}</b><span>{{ s.text }}</span></li>{% endfor %}
     </ol>
+    <details class="toolkit">
+      <summary class="btn">Open the toolkit: data, models, packages and lessons</summary>
     <div class="reveal">
       <h3 class="sub">Data</h3>
       <table class="kv">
@@ -303,36 +311,17 @@
     <div class="tips reveal">
       {% for t in site.data.ai.tips %}<div class="tip"><b>{{ t.title }}</b><span>{{ t.text }}</span></div>{% endfor %}
     </div>
-      </div>
-  </section>
-
-  <section id="writing">
-    <div class="shead">
-    <p class="label reveal">Blog</p>
-    <h2 class="reveal">Blog</h2>
+      </details>
     </div>
-    <div class="sbody">
-    <ul class="list reveal">
-      {% for post in site.posts %}
-      <li>
-        <span class="yr">{{ post.date | date: "%Y" }}</span>
-        <span>
-          <a class="t" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-          <span class="sub">{{ post.excerpt | strip_html | strip }}</span>
-        </span>
-      </li>
-      {% endfor %}
-    </ul>
-      </div>
   </section>
 
   <section id="visuals">
     <div class="shead">
     <p class="label reveal">Visualisations</p>
-    <h2 class="reveal">Questions, answered in charts</h2>
+    <h2 class="reveal">The collection</h2>
     </div>
     <div class="sbody">
-    <p class="intro reveal">Each chart starts from a question someone deciding on funding would ask. I designed and built them in Flourish. Hover or tap for the numbers.</p>
+    <p class="intro reveal">Each piece starts from a question someone deciding on funding would ask, and answers it with the evidence. I designed and built them in Flourish. Hover or tap for the numbers.</p>
     <div class="vizgrid">
     {% for v in site.data.visuals %}
     <figure class="viz reveal{% if v.size == 'half' %} half{% endif %}">
@@ -366,10 +355,29 @@
       </div>
   </section>
 
+  <section id="code">
+    <div class="shead">
+    <p class="label reveal">Code</p>
+    <h2 class="reveal">From my GitHub</h2>
+    </div>
+    <div class="sbody">
+    <p class="intro reveal">Selected public repositories. More at <a href="https://github.com/{{ site.author.github }}">github.com/{{ site.author.github }}</a>.</p>
+    <div class="grid">
+      {% for r in site.data.repos %}
+      <article class="card repo reveal">
+        <h3><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"/></svg><a href="https://github.com/{{ site.author.github }}/{{ r.name }}">{{ r.name }}</a></h3>
+        <p>{{ r.desc }}</p>
+        <p class="lang">{{ r.lang }}</p>
+      </article>
+      {% endfor %}
+    </div>
+      </div>
+  </section>
+
   <section id="publications">
     <div class="shead">
     <p class="label reveal">Publications</p>
-    <h2 class="reveal">Reports and papers</h2>
+    <h2 class="reveal">Published work</h2>
     </div>
     <div class="sbody">
     <p class="intro reveal">Evaluation reports and working papers I co-authored. They are team products; co-authors are named in each report.</p>
@@ -389,22 +397,23 @@
       </div>
   </section>
 
-  <section id="code">
+  <section id="writing">
     <div class="shead">
-    <p class="label reveal">Code</p>
-    <h2 class="reveal">On GitHub</h2>
+    <p class="label reveal">Blog</p>
+    <h2 class="reveal">Blog</h2>
     </div>
     <div class="sbody">
-    <p class="intro reveal">Selected public repositories. More at <a href="https://github.com/{{ site.author.github }}">github.com/{{ site.author.github }}</a>.</p>
-    <div class="grid">
-      {% for r in site.data.repos %}
-      <article class="card repo reveal">
-        <h3><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"/></svg><a href="https://github.com/{{ site.author.github }}/{{ r.name }}">{{ r.name }}</a></h3>
-        <p>{{ r.desc }}</p>
-        <p class="lang">{{ r.lang }}</p>
-      </article>
+    <ul class="list reveal">
+      {% for post in site.posts %}
+      <li>
+        <span class="yr">{{ post.date | date: "%Y" }}</span>
+        <span>
+          <a class="t" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+          <span class="sub">{{ post.excerpt | strip_html | strip }}</span>
+        </span>
+      </li>
       {% endfor %}
-    </div>
+    </ul>
       </div>
   </section>
 
