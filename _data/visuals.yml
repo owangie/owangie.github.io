@@ -6,7 +6,7 @@
 - id: "26622426"
   type: scatter
   title: "Do neighbours slow each other down?"
-  caption: "I wondered whether projects spanning several countries, especially countries that share a border, move money more slowly. Political tension between neighbours could hold up approvals, transfers or spending. A colleague's algorithm measures how close a project's countries are to each other; I grouped projects into four categories on that basis and plotted disbursement against project maturity. It is a hypothesis, not a verdict. What would you expect: do neighbours cooperate more easily, or clash more often?"
+  caption: "I wondered whether projects spanning several countries, especially countries that share a border, move money more slowly. Political tension between neighbours could hold up approvals, transfers or spending. A colleague's algorithm measures how connected a project's countries are, and I plotted disbursement against maturity in four groups: single country, weak regional, strong regional and multi-regional. More of the strong regional projects, the blue dots, sit below the line than above it. It is a hypothesis, not a verdict. What would you expect: do neighbours cooperate more easily, or clash more often?"
 - id: "27526316"
   type: chart
   size: half
