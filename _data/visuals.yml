@@ -8,14 +8,22 @@
   title: "Disbursement and project maturity"
   caption: "Disbursement plotted against project maturity across the GCF portfolio, prepared for the Third Performance Review."
 - id: "22701053"
+  size: half
   type: treemap
   title: "Finance by GCF results area"
   caption: "Financing in the Simplified Approval Process portfolio by GCF results area, split into adaptation and mitigation. Prepared for the 2025 Independent Evaluation of the Simplified Approval Process."
 - id: "24566148"
+  size: half
   type: chart
   title: "GCF portfolio over time"
   caption: "Growth of the GCF portfolio over time, prepared for the 2025 Independent Evaluation of the GCF Approach to Country Ownership."
 - id: "27526316"
+  size: half
   type: chart
   title: "Private sector share in grant equivalent terms"
   caption: "Private sector share of the cumulative GCF portfolio by approval year, converting nominal financing to grant equivalent value, with a projection to 2027."
+- id: "23945772"
+  type: chart
+  size: half
+  title: "Where National Designated Authorities sit"
+  caption: "Types of government office hosting the GCF National Designated Authority in each country."
