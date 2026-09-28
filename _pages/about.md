@@ -35,7 +35,7 @@ Getting in took eight rounds of interviews (no LeetCode, luckily). Two of Amazon
 
 Then came four years at UNDP as a data scientist. I built the Power BI dashboards country offices used to follow programme results, and wrote code that sorted and summarised more than 15,000 evaluation reports. That was my first real text mining: the evidence was all there, locked inside documents.
 
-On the side, in 2024, I volunteered with UNDP's Accelerator Labs and Algorand to help shape the course design of UNDP's [Blockchain Academy](https://www.undp.org/news/undp-takes-its-blockchain-academy-global) for country offices.
+On the side, in 2023, I volunteered with UNDP's Accelerator Labs and Algorand to help shape the course design of UNDP's [Blockchain Academy](https://www.undp.org/news/undp-takes-its-blockchain-academy-global) for country offices.
 
 **Now.** I'm an evaluation associate at the Green Climate Fund's Independent Evaluation Unit in Incheon, Korea. I build datasets from project portfolios, write Python that gets language models to read project documents, and turn the results into charts for evaluation reports.
 
