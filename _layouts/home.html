@@ -443,7 +443,7 @@
     <h2 class="reveal">On my shelf</h2>
     </div>
     <div class="sbody">
-    <p class="intro reveal">The books that shaped how I work, beginning with my first programming book.</p>
+    <p class="intro reveal">The books and courses that shaped how I work, beginning with my first programming book.</p>
     <ul class="list reveal">
       {% for b in site.data.books %}
       <li>
@@ -451,6 +451,18 @@
         <span>
           <a class="t" href="{{ b.url }}">{{ b.title }}</a>
           <span class="sub">{{ b.author }}, {{ b.publisher }}. {{ b.note }}</span>
+        </span>
+      </li>
+      {% endfor %}
+    </ul>
+    <h3 class="sub reveal">Courses</h3>
+    <ul class="list reveal">
+      {% for c in site.data.courses %}
+      <li>
+        <span class="yr">Course</span>
+        <span>
+          <a class="t" href="{{ c.url }}">{{ c.title }}</a>
+          <span class="sub">{{ c.by }}. {{ c.note }}</span>
         </span>
       </li>
       {% endfor %}

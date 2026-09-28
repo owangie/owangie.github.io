@@ -1,0 +1,9 @@
+# Courses listed under "On my shelf".
+- title: "ChatGPT Prompt Engineering for Developers"
+  by: "DeepLearning.AI with OpenAI. Isa Fulford and Andrew Ng"
+  url: "https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/"
+  note: "A short, free course on calling a language model from code and writing prompts that hold up."
+- title: "Generative AI for Everyone"
+  by: "DeepLearning.AI. Andrew Ng"
+  url: "https://www.deeplearning.ai/courses/generative-ai-for-everyone/"
+  note: "What generative AI can and cannot do, explained without code. A good first step for colleagues."
