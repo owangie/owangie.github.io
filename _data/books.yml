@@ -11,3 +11,9 @@
   publisher: "O'Reilly"
   url: "https://www.amazon.com/Causal-Inference-Python-Applying-Industry/dp/1098140257"
   note: "A practical guide to estimating what would have happened otherwise, with Python code."
+- title: "Social capital I: measurement and associations with economic mobility"
+  author: "Raj Chetty and colleagues"
+  year: 2022
+  publisher: "Nature 608"
+  url: "https://doi.org/10.1038/s41586-022-04996-4"
+  note: "What I'm reading now. It measures friendships across class from 21 billion Facebook connections and finds that knowing people richer than you is one of the strongest predictors of upward mobility. A network question, like the one in my neighbours graph, at the scale of a whole country."
