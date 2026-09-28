@@ -248,7 +248,7 @@
     <div class="hero-text">
     <p class="eyebrow">Data curator</p>
     <h1>{{ site.author.name }}</h1>
-    <p>A curator builds an object's history from evidence. I do the same for development projects: I gather the data, check it, and piece together whether the money did what it promised. Language models help me mine the text no team could read by hand.</p>
+    <p>Where a curator reads provenance, I read portfolios: development data gathered, tested and set down as the story of whether the money did what it promised, with language models to mine the text no team could read by hand.</p>
     <div class="btns">
       <a class="btn primary" href="#visuals">See the collection</a>
       <a class="btn" href="https://www.linkedin.com/in/{{ site.author.linkedin }}/">LinkedIn</a>
@@ -280,7 +280,7 @@
     <h2 class="reveal">How I curate</h2>
     </div>
     <div class="sbody">
-    <p class="intro reveal">Much of the evidence about a project sits in long documents: proposals, progress reports, evaluations, survey answers. Language models are my tool for mining that text at scale, and a person checks what matters before anything is used. The steps are always the same. There is a <a href="{{ site.baseurl }}/writing/llm-screening-private-sector/">worked example on the blog</a>.</p>
+    <p class="intro reveal">Evidence rarely arrives in tidy tables. Most of it lies in proposals, progress reports and survey answers, and language models are how I mine it, with a person checking every piece that matters. There is a <a href="{{ site.baseurl }}/writing/llm-screening-private-sector/">worked example on the blog</a>.</p>
     <ol class="flow reveal">
       {% for s in site.data.ai.pipeline %}<li><b>{{ s.step }}</b><span>{{ s.text }}</span></li>{% endfor %}
     </ol>
@@ -321,7 +321,7 @@
     <h2 class="reveal">The collection</h2>
     </div>
     <div class="sbody">
-    <p class="intro reveal">Each piece starts from a question someone deciding on funding would ask, and answers it with the evidence. I designed and built them in Flourish. Hover or tap for the numbers.</p>
+    <p class="intro reveal">Six questions a funder might ask, each answered with a chart I designed and built in Flourish. Hover or tap for the numbers.</p>
     <div class="vizgrid">
     {% for v in site.data.visuals %}
     <figure class="viz reveal{% if v.size == 'half' %} half{% endif %}">
@@ -343,7 +343,7 @@
     <h2 class="reveal">Things I've built</h2>
     </div>
     <div class="sbody">
-    <p class="intro reveal">Tools I have built and that people use.</p>
+    <p class="intro reveal">Tools made for the people who open them every week.</p>
     <div class="grid">
       {% for p in site.portfolio %}
       <article class="card reveal">
@@ -380,7 +380,7 @@
     <h2 class="reveal">Published work</h2>
     </div>
     <div class="sbody">
-    <p class="intro reveal">Evaluation reports and working papers I co-authored. They are team products; co-authors are named in each report.</p>
+    <p class="intro reveal">Independent evaluations and working papers, each one the work of a team, with co-authors named in every report.</p>
     <ul class="list reveal">
       {% assign pubs = site.publications | sort: "date" | reverse %}
       {% for p in pubs %}
@@ -403,6 +403,7 @@
     <h2 class="reveal">Blog</h2>
     </div>
     <div class="sbody">
+    <p class="intro reveal">Field notes on language models, official statistics and the slow craft of building evidence.</p>
     <ul class="list reveal">
       {% for post in site.posts %}
       <li>
@@ -423,6 +424,7 @@
     <h2 class="reveal">Talks</h2>
     </div>
     <div class="sbody">
+    <p class="intro reveal">Rooms where I have shared the work, and what I brought to them.</p>
     {% for t in site.talks reversed %}
     <article class="talk reveal">
       <h3>{{ t.title }}</h3>
@@ -440,6 +442,7 @@
     <h2 class="reveal">On my shelf</h2>
     </div>
     <div class="sbody">
+    <p class="intro reveal">The books that shaped how I work, beginning with my first programming book.</p>
     <ul class="list reveal">
       {% for b in site.data.books %}
       <li>
@@ -460,7 +463,7 @@
     <h2>Say hello</h2>
     </div>
     <div class="sbody">
-    <p class="intro">The best way to reach me is on LinkedIn. My CV is available on request.</p>
+    <p class="intro">For a conversation, a collaboration or a copy of my CV, LinkedIn is the surest way to reach me.</p>
     <div class="btns">
       <a class="btn primary" href="https://www.linkedin.com/in/{{ site.author.linkedin }}/">Message me on LinkedIn</a>
       <a class="btn" href="https://github.com/{{ site.author.github }}">GitHub</a>
