@@ -118,6 +118,24 @@
     .talk-fig img { width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); background: #fff; }
     .talk-fig figcaption { font-size: 13px; color: var(--muted); margin-top: 8px; }
 
+    /* AI section */
+    .flow { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 10px; margin: 8px 0 32px; counter-reset: step; }
+    .flow li { list-style: none; position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px; }
+    .flow li b { display: block; font-size: 14px; margin-bottom: 4px; }
+    .flow li b::before { counter-increment: step; content: counter(step); display: inline-grid; place-items: center; width: 20px; height: 20px; margin-right: 8px;
+      border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-size: 12px; }
+    .flow li span { font-size: 13px; color: var(--muted); line-height: 1.5; display: block; }
+    .flow li:not(:last-child)::after { content: "92"; position: absolute; right: -10px; top: 50%; transform: translate(50%,-50%); color: var(--muted); font-size: 14px; z-index: 1; }
+    @media (max-width: 760px) { .flow { grid-template-columns: 1fr; } .flow li:not(:last-child)::after { content: "93"; right: 50%; top: auto; bottom: -10px; transform: translate(50%,50%); } }
+    h3.sub { font-size: 16px; font-weight: 600; margin: 28px 0 12px; }
+    .kv { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .kv th, .kv td { text-align: left; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+    .kv th { font-weight: 500; color: var(--muted); font-size: 13px; }
+    .tips { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+    .tip { border-left: 3px solid var(--accent); padding: 4px 0 4px 14px; }
+    .tip b { display: block; font-size: 15px; margin-bottom: 2px; }
+    .tip span { font-size: 14px; color: var(--muted); }
+
     footer { padding: 40px 0 56px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
 
     /* reveal on scroll */
@@ -133,11 +151,14 @@
     <a class="name" href="#top">{{ site.author.name }}</a>
     <ul>
       <li class="opt"><a href="#about">About</a></li>
+      <li><a href="#ai">AI</a></li>
       <li><a href="#visuals">Visuals</a></li>
+      <li class="opt"><a href="#writing">Writing</a></li>
       <li><a href="#projects">Projects</a></li>
       <li class="opt"><a href="#publications">Publications</a></li>
       <li class="opt"><a href="#code">Code</a></li>
       <li class="opt"><a href="#engagement">Engagement</a></li>
+      <li class="opt"><a href="#reading">Reading</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -163,6 +184,47 @@
     <p class="label">About</p>
     <h2>About me</h2>
     <div class="prose">{{ content }}</div>
+  </section>
+
+  <section id="ai">
+    <p class="label reveal">AI in my work</p>
+    <h2 class="reveal">How I use AI and language models</h2>
+    <p class="intro reveal">Most of my AI work applies language models to documents that people would otherwise read one by one: funding proposals, evaluation reports and survey responses. This is the workflow I use, the data and models behind it, and what I have learned along the way. <a href="{{ site.baseurl }}/writing/llm-screening-private-sector/">Read a worked example.</a></p>
+    <ol class="flow reveal">
+      {% for s in site.data.ai.pipeline %}<li><b>{{ s.step }}</b><span>{{ s.text }}</span></li>{% endfor %}
+    </ol>
+    <div class="reveal">
+      <h3 class="sub">Data</h3>
+      <table class="kv">
+        {% for d in site.data.ai.data %}<tr><td style="width:34%">{% if d.url %}<a href="{{ d.url }}">{{ d.name }}</a>{% else %}{{ d.name }}{% endif %}</td><td>{{ d.text }}</td></tr>{% endfor %}
+      </table>
+      <h3 class="sub">Models</h3>
+      <table class="kv">
+        <tr><th>Model</th><th>Accessed through</th><th>Used for</th></tr>
+        {% for m in site.data.ai.models %}<tr><td>{{ m.name }}</td><td>{{ m.via }}</td><td>{{ m.use }}</td></tr>{% endfor %}
+      </table>
+      <p class="intro" style="margin-top:14px">{{ site.data.ai.packages }}</p>
+    </div>
+    <h3 class="sub reveal">Lessons from practice</h3>
+    <div class="tips reveal">
+      {% for t in site.data.ai.tips %}<div class="tip"><b>{{ t.title }}</b><span>{{ t.text }}</span></div>{% endfor %}
+    </div>
+  </section>
+
+  <section id="writing">
+    <p class="label reveal">Writing</p>
+    <h2 class="reveal">Notes</h2>
+    <ul class="list reveal">
+      {% for post in site.posts %}
+      <li>
+        <span class="yr">{{ post.date | date: "%Y" }}</span>
+        <span>
+          <a class="t" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+          <span class="sub">{{ post.excerpt | strip_html | strip }}</span>
+        </span>
+      </li>
+      {% endfor %}
+    </ul>
   </section>
 
   <section id="visuals">
@@ -241,6 +303,22 @@
       <div class="btns">{% if t.link %}<a class="btn" href="{{ t.link }}">{{ t.link_label | default: "View the slides" }}</a>{% endif %}{% if t.link2 %}<a class="btn" href="{{ t.link2 }}">{{ t.link2_label }}</a>{% endif %}</div>
     </article>
     {% endfor %}
+  </section>
+
+  <section id="reading">
+    <p class="label reveal">Reading</p>
+    <h2 class="reveal">Books I recommend</h2>
+    <ul class="list reveal">
+      {% for b in site.data.books %}
+      <li>
+        <span class="yr">{{ b.year }}</span>
+        <span>
+          <a class="t" href="{{ b.url }}">{{ b.title }}</a>
+          <span class="sub">{{ b.author }}, {{ b.publisher }}. {{ b.note }}</span>
+        </span>
+      </li>
+      {% endfor %}
+    </ul>
   </section>
 
   <section id="contact" class="reveal">

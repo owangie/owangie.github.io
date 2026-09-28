@@ -1,0 +1,7 @@
+# Reading list on the home page.
+- title: "Causal Inference in Python: Applying Causal Inference in the Tech Industry"
+  author: "Matheus Facure"
+  year: 2023
+  publisher: "O'Reilly"
+  url: "https://www.amazon.com/Causal-Inference-Python-Applying-Industry/dp/1098140257"
+  note: "A practical guide to estimating what would have happened otherwise, with Python code."
