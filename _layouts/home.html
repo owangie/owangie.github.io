@@ -151,6 +151,15 @@
     .chip { display: inline-block; font-size: 11px; color: var(--accent); border: 1px solid var(--accent); border-radius: 5px; padding: 0 6px; margin: 6px 6px 0 0; text-decoration: none; }
     .chip:hover { background: var(--accent-soft); }
 
+    .bars { display: grid; gap: 8px; margin-bottom: 8px; }
+    .bar { display: grid; grid-template-columns: 120px 1fr 32px 130px; align-items: center; gap: 10px; font-size: 13px; }
+    .bar .bn { font-family: ui-monospace, Consolas, monospace; }
+    .bar .bt { height: 10px; background: var(--line); border-radius: 5px; overflow: hidden; }
+    .bar .bt i { display: block; height: 100%; background: var(--accent); border-radius: 5px; }
+    .bar .bv { text-align: right; font-variant-numeric: tabular-nums; color: var(--muted); }
+    .bar .bu { color: var(--muted); }
+    @media (max-width: 560px) { .bar { grid-template-columns: 96px 1fr 28px; } .bar .bu { display: none; } }
+
     footer { padding: 40px 0 56px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
 
     /* reveal on scroll */
@@ -167,7 +176,7 @@
     <ul>
       <li><a href="#ai">AI</a></li>
       <li><a href="#visuals">Visuals</a></li>
-      <li class="opt"><a href="#writing">Writing</a></li>
+      <li class="opt"><a href="#writing">Blog</a></li>
       <li class="opt"><a href="#publications">Publications</a></li>
       <li class="opt"><a href="#engagement">Engagement</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -180,7 +189,7 @@
   <header class="hero reveal">
     <div class="hero-text">
     <h1>{{ site.author.name }}</h1>
-    <p>I build the data and AI tools behind independent evaluations of climate finance: language model pipelines that read project documents, portfolio datasets, and the analysis presented to the Green Climate Fund Board.</p>
+    <p>I work on one question: did the money do what it was meant to? I answer it with data and AI: language models that read thousands of project documents, portfolio analysis, and charts that decision makers can use.</p>
     <div class="btns">
       <a class="btn primary" href="#projects">See projects</a>
       <a class="btn" href="https://www.linkedin.com/in/{{ site.author.linkedin }}/">LinkedIn</a>
@@ -218,7 +227,7 @@
     <h2 class="reveal">How I use AI and language models</h2>
     </div>
     <div class="sbody">
-    <p class="intro reveal">Most of my AI work applies language models to documents that people would otherwise read one by one: funding proposals, evaluation reports and survey responses. This is the workflow I use, the data and models behind it, and what I have learned along the way. <a href="{{ site.baseurl }}/writing/llm-screening-private-sector/">Read a worked example.</a></p>
+    <p class="intro reveal">Most of my AI work applies language models to documents people would otherwise read one by one: project proposals, evaluation reports and survey responses. Below is the workflow, the data and models, the tools I actually use most, and what I have learned. <a href="{{ site.baseurl }}/writing/llm-screening-private-sector/">Read a worked example on the blog.</a></p>
     <ol class="flow reveal">
       {% for s in site.data.ai.pipeline %}<li><b>{{ s.step }}</b><span>{{ s.text }}</span></li>{% endfor %}
     </ol>
@@ -232,7 +241,16 @@
         <tr><th>Model</th><th>Accessed through</th><th>Used for</th></tr>
         {% for m in site.data.ai.models %}<tr><td>{{ m.name }}</td><td>{{ m.via }}</td><td>{{ m.use }}</td></tr>{% endfor %}
       </table>
-      <p class="intro" style="margin-top:14px">{{ site.data.ai.packages }}</p>
+      <h3 class="sub">Packages I use most</h3>
+      <p class="intro" style="margin-bottom:12px">Share of my {{ site.data.skills.total_files }} Python scripts and notebooks that import each package.</p>
+      <div class="bars">
+        {% for k in site.data.skills.packages %}{% assign pct = k.n | times: 100.0 | divided_by: site.data.skills.total_files %}
+        <div class="bar"><span class="bn">{{ k.name }}</span><span class="bt"><i style="width:{{ pct | round: 1 }}%"></i></span><span class="bv">{{ k.n }}</span><span class="bu">{{ k.use }}</span></div>{% endfor %}
+      </div>
+      <h3 class="sub">Prompting techniques I rely on</h3>
+      <div class="tips">
+        {% for t in site.data.skills.prompting %}<div class="tip"><b>{{ t.name }}</b><span>{{ t.text }}</span></div>{% endfor %}
+      </div>
     </div>
     <h3 class="sub reveal">Lessons from practice</h3>
     <div class="tips reveal">
@@ -243,8 +261,8 @@
 
   <section id="writing">
     <div class="shead">
-    <p class="label reveal">Writing</p>
-    <h2 class="reveal">Notes</h2>
+    <p class="label reveal">Blog</p>
+    <h2 class="reveal">Blog</h2>
     </div>
     <div class="sbody">
     <ul class="list reveal">
@@ -264,10 +282,10 @@
   <section id="visuals">
     <div class="shead">
     <p class="label reveal">Visualisations</p>
-    <h2 class="reveal">Charts I have designed</h2>
+    <h2 class="reveal">Questions, answered with charts</h2>
     </div>
     <div class="sbody">
-    <p class="intro reveal">Interactive charts I designed and built in Flourish for evaluation reporting. Hover or tap for details.</p>
+    <p class="intro reveal">Each chart starts from a question a decision maker would ask. I designed and built them in Flourish; hover or tap for details.</p>
     <div class="vizgrid">
     {% for v in site.data.visuals %}
     <figure class="viz reveal{% if v.size == 'half' %} half{% endif %}">
@@ -289,7 +307,7 @@
     <h2 class="reveal">Selected work</h2>
     </div>
     <div class="sbody">
-    <p class="intro reveal">Tools I have built at the Green Climate Fund and UNDP.</p>
+    <p class="intro reveal">Tools I have built and that people use.</p>
     <div class="grid">
       {% for p in site.portfolio %}
       <article class="card reveal">
@@ -307,7 +325,7 @@
     <h2 class="reveal">Reports and papers</h2>
     </div>
     <div class="sbody">
-    <p class="intro reveal">Independent evaluation reports and working papers co-authored at the GCF Independent Evaluation Unit. These are team products; co-authors are named in each report.</p>
+    <p class="intro reveal">Evaluation reports and working papers I co-authored. They are team products; co-authors are named in each report.</p>
     <ul class="list reveal">
       {% assign pubs = site.publications | sort: "date" | reverse %}
       {% for p in pubs %}

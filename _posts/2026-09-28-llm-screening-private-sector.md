@@ -1,16 +1,18 @@
 ---
 layout: note
-title: "Screening climate finance proposals with few-shot prompting"
+title: "Can a language model tell whether a climate project really involves the private sector?"
 date: 2026-09-28
 permalink: /writing/llm-screening-private-sector/
-excerpt: "How the GCF private sector evaluation used a language model to read every funding proposal against three criteria: the architecture, the code, and what it took to make the answers reliable."
+excerpt: "A research question, a few-shot prompting pipeline and the code behind it: reading every project proposal of a climate fund against three tests of private sector engagement."
 ---
 
-For the Independent Evaluation of the GCF's Portfolio of and Approach to the Private Sector, I wrote the standard operating procedure (SOP) for an AI-assisted screening of funding proposals, built the pipeline that runs it, and helped build the entity ownership taxonomy it depends on. The method is published in Appendix 4 of the evaluation's [approach paper](https://ieu.greenclimate.fund/sites/default/files/document/260902-priv2026-approach-paper-top.pdf) (pages 30 and 31). This note walks through the design and the code.
+**Research question:** when a climate project is labelled "public sector", does that mean the private sector plays no part? And can a language model find the evidence in the project's own documents, reliably enough to use in an evaluation?
+
+I designed the procedure (the SOP) for answering this at scale, built the pipeline, and helped build the entity ownership taxonomy it depends on. The work supports an evaluation of a multilateral climate fund's private sector approach; the method is published in its [approach paper](https://ieu.greenclimate.fund/sites/default/files/document/260902-priv2026-approach-paper-top.pdf) (Appendix 4, pages 30 and 31). This post walks through the design and the code.
 
 ## The problem
 
-GCF projects are labelled "Public Sector" or "Private Sector" in Secretariat systems. The label does not show how much the private sector is actually involved in implementation. The evaluation needed that evidence for every approved funding proposal. Proposals are long, and their templates have changed over time. Reading them all by hand, consistently, was not realistic.
+Projects in the fund's portfolio are labelled "Public Sector" or "Private Sector" in its systems. The label does not show how much the private sector is actually involved in implementation. The evaluation needed that evidence for every approved funding proposal. Proposals are long, and their templates have changed over time. Reading them all by hand, consistently, was not realistic.
 
 So the question for the tool was narrow and testable: **for each proposal, is there written evidence of private sector engagement, and where exactly is it?**
 
@@ -21,7 +23,7 @@ Each proposal is screened against three criteria. Each criterion has its own pro
 | Criterion | Question | "Met" requires |
 |---|---|---|
 | Market creation | Does the project deliberately support a local private actor? | A named component, output or indicator for that support |
-| Risk profile | Does GCF's financing take a private sector form? | A loan, guarantee or equity aimed at private investors, or a grant funding a named mechanism to de-risk or mobilise private capital |
+| Risk profile | Does the fund's financing take a private sector form? | A loan, guarantee or equity aimed at private investors, or a grant funding a named mechanism to de-risk or mobilise private capital |
 | Capital mobilisation | Is private capital actually mobilised? | A named mechanism **and** a named counterparty confirmed private |
 
 Every answer is "met", "not met" or "unclear", and must quote the proposal. A proposal counts as private sector relevant if it meets **at least one** criterion, because each is a separate route to private sector engagement.
@@ -47,7 +49,7 @@ We used **static** few-shot prompting: a fixed, hand-picked set of examples per 
 
 * **Extraction.** Text is pulled once per proposal and cached, so reruns do not repeat it.
 * **Section targeting.** Each criterion only sees the sections that matter to it (for example financing structure for risk profile), plus a short summary. Less text means lower cost and less room for the model to be distracted.
-* **Model.** GPT-5.4 mini ([OpenAI](https://openai.com/index/introducing-gpt-5-4-mini-and-nano/)) through GCF's internal Azure AI Foundry deployment, so no proposal text leaves GCF's environment.
+* **Model.** GPT-5.4 mini ([OpenAI](https://openai.com/index/introducing-gpt-5-4-mini-and-nano/)) through the organisation's own Azure AI Foundry deployment, so no proposal text leaves its cloud environment.
 * **Rule checks.** Anything that must never happen is enforced in code, not left to the prompt.
 
 ## Implementation

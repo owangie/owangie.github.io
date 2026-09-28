@@ -1,0 +1,21 @@
+# Package counts: number of my Python files and notebooks (109 in my current work folder) that import each package. Counted 2026-09-28.
+total_files: 109
+packages:
+  - {name: "pandas", n: 66, use: "data wrangling"}
+  - {name: "matplotlib", n: 40, use: "charts"}
+  - {name: "numpy", n: 37, use: "numerics"}
+  - {name: "openpyxl", n: 11, use: "Excel output"}
+  - {name: "python-docx", n: 10, use: "Word reports"}
+  - {name: "scipy", n: 9, use: "statistics"}
+  - {name: "requests", n: 8, use: "APIs and scraping"}
+  - {name: "seaborn", n: 6, use: "charts"}
+  - {name: "openai", n: 5, use: "LLM calls"}
+  - {name: "azure-identity", n: 4, use: "secure sign in"}
+  - {name: "statsmodels", n: 3, use: "regression"}
+prompting:
+  - {name: "Few-shot with corrective examples", text: "Real passages with the right answer, especially the ones the model first got wrong."}
+  - {name: "One question per call", text: "Split a judgement into separate calls so one answer cannot colour another."}
+  - {name: "Structured JSON output", text: "A fixed answer shape that code can validate and export."}
+  - {name: "Quote the evidence", text: "Every answer must cite the exact text it relies on."}
+  - {name: "Permission to abstain", text: "An explicit 'unclear' option instead of a forced yes or no."}
+  - {name: "Rules checked in code", text: "Hard constraints enforced after the model answers, not only in the prompt."}

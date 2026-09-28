@@ -1,7 +1,7 @@
 # "AI in my work" section of the home page.
 pipeline:
   - step: "Collect"
-    text: "Funding proposals, evaluation reports and GCF open data"
+    text: "Project proposals, evaluation reports and open portfolio data"
   - step: "Extract"
     text: "Read PDFs page by page; find sections by topic, not number"
   - step: "Ask"
@@ -13,19 +13,18 @@ pipeline:
 data:
   - name: "GCF open data portal"
     url: "https://data.greenclimate.fund/public"
-    text: "Project level data on approved GCF projects: financing, results areas, entities and countries."
-  - name: "Funding proposal documents"
-    text: "The full text of approved proposals, used for document screening."
+    text: "Open project level data on climate finance: financing, results areas, institutions and countries."
+  - name: "Project proposals"
+    text: "The full text of approved project proposals, used for document screening."
   - name: "Evaluation reports"
     text: "Evaluation documents used for text mining and evidence synthesis."
 models:
   - name: "GPT-5.4 mini"
-    via: "Azure AI Foundry (inside GCF's environment)"
+    via: "Azure AI Foundry, inside my organisation's cloud"
     use: "Screening funding proposals against evaluation criteria"
   - name: "GPT-4o"
     via: "Azure AI Foundry"
     use: "Earlier versions of document extraction work"
-packages: "Python: openai, azure-identity, PyMuPDF, ijson, pandas, openpyxl. R. Power BI. Flourish for charts."
 tips:
   - title: "Write the rule before the prompt"
     text: "Agree the decision rule a human reviewer would apply, and write it down as a procedure. The prompt comes after."
