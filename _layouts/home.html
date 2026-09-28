@@ -410,7 +410,7 @@
       <li>
         <span class="yr">{{ post.date | date: "%Y" }}</span>
         <span>
-          <a class="t" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+          <a class="t" href="{% if post.external_url %}{{ post.external_url }}{% else %}{{ site.baseurl }}{{ post.url }}{% endif %}">{{ post.title }}</a>{% if post.external_url %}<span class="tag">IEU website</span>{% endif %}
           <span class="sub">{{ post.excerpt | strip_html | strip }}</span>
         </span>
       </li>
