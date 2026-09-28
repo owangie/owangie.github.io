@@ -1,7 +1,7 @@
 ---
 layout: note
 title: "What official statisticians are doing to keep AI honest"
-date: 2026-09-27
+date: 2025-09-25
 permalink: /writing/oecd-official-statistics-ai/
 excerpt: "Notes from an OECD conference on official statistics in Seoul: human review aimed where the model is unsure, RAG versus RIG, and why PDFs are still an unsolved problem."
 ---
