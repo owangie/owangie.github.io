@@ -6,7 +6,7 @@ permalink: /writing/lda-topic-modelling-undp/
 excerpt: "A guide I wrote at UNDP in 2020: translating project descriptions, cleaning text, building a document-term matrix, choosing the number of topics by coherence, and reading the topics with a dendrogram. In R, with the code."
 ---
 
-In 2020, UNDP country offices described their innovation work in free text: accelerator labs, youth bootcamps, gender-based violence platforms, new ways of financing the SDGs. Nobody had time to read all of it and sort it by hand. So I wrote this guide for colleagues on how to let a topic model do the first pass.
+In 2020, UNDP country offices described their innovation work in free text: accelerator labs, youth bootcamps, gender-based violence platforms, new ways of financing the SDGs. Nobody had time to read all of it and sort it by hand. So I wrote this guide for colleagues on how to let a topic model do the first pass. The full R script and figures are on [GitHub](https://github.com/awongonki/undp_LDA_2020); the underlying UNDP data is internal and not shared.
 
 The method is **Latent Dirichlet Allocation (LDA)**. It assumes each document is a mix of topics, and each topic is a mix of words. Given only the documents, it works backwards to find the topics.
 
