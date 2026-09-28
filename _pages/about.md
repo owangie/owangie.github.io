@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I didn't start in data. I studied Portuguese, Estonian and foreign affairs in Beijing, and in my fourth year I picked up C, which I count as my third foreign language (sorry, Estonian). My first programming book was *Python Crash Course*, at 19. I helped run training courses at China's Ministry of Commerce for government officials from the least developed countries, then spent a summer at Amazon Web Services in Hong Kong, where I still remember the engineer on the team who was fine-tuning Alexa. The numbers got serious during a Master of Public Policy in development economics at the University of Maryland.
+I didn't start in data. I studied Portuguese, Estonian and foreign affairs in Beijing, and at 19 I picked up Python with *Python Crash Course*, my first programming book. I still count Python as my third foreign language (sorry, Estonian). I helped run training courses at China's Ministry of Commerce for government officials from the least developed countries, then spent a summer at Amazon Web Services in Hong Kong, where I still remember the engineer on the team who was fine-tuning Alexa. The numbers got serious during a Master of Public Policy in development economics at the University of Maryland.
 
 Then came four years at UNDP in New York as a data scientist. I built the Power BI dashboards country offices used to follow programme results, and wrote code that sorted and summarised more than 15,000 evaluation reports. That was my first real text mining: the evidence was all there, locked inside documents. Along the way I also worked at the World Food Programme and the UN Capital Development Fund.
 
