@@ -39,4 +39,4 @@ In my first months I started using machine learning to mine evaluation evidence,
 
 **Outside work** I help an auction house part time, and I have a soft spot for Chinese antiques. The job there is the same as mine at work: every object has a story, and you build it from evidence, a mark here, a record there, until the history holds up.
 
-My title is data scientist. But the part of the job I love most is closer to what a specialist does at an auction house: finding the story the evidence will actually support.
+My title is data scientist. The way I work is closer to what a specialist does at an auction house: finding the story the evidence will actually support.
