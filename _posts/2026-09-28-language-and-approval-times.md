@@ -3,7 +3,7 @@ layout: note
 title: "Does speaking English get your climate project approved faster?"
 date: 2026-09-28
 permalink: /writing/language-and-approval-times/
-excerpt: "A hypothesis from the field, a test on the whole portfolio, one result that disappeared under scrutiny and one that held, and later cited in the Board paper on multilingualism."
+excerpt: "A hypothesis from the field, a test on the whole portfolio, one result that disappeared under scrutiny and one that held, and how both the Secretariat and civil society cited it in the Board debate on multilingualism."
 ---
 
 The hypothesis came from the field, not from a spreadsheet. In interviews for the [evaluation of the Green Climate Fund's approach to country ownership](https://ieu.greenclimate.fund/document/finalreport-coa2025), partners from the World Bank, UNDP, FAO and others kept telling us the same thing. The Fund works almost entirely in English from its headquarters in Korea, with no regional or country offices. Many of the people preparing projects on the ground do not work in English, and some are many time zones away.
@@ -64,10 +64,14 @@ and
 
 The paper weighed the two together. It concluded there was not yet broad evidence that accepting proposals in other languages would by itself widen access, and focused its approach on language skills: hiring and training so that regional teams and headquarters can work with countries in their own languages.
 
-That is what a small piece of analysis can do. It did not settle the question, and it was never going to. It gave a policy discussion a number to argue with instead of an impression, and it showed which part of the problem, speed rather than access, the evidence actually points to.
+Civil society read the same evidence very differently. At the same Board meeting, the GCF Observer Network of Civil Society, Indigenous Peoples, and Local Communities called the paper *"under-developed documentation"* rather than a real strategy ([intervention on multilingualism](https://www.gcfwatch.org/wp-content/uploads/2025/10/GCFWatch_B.43_Multilingualism.pdf)). It pointed to the same country ownership evaluation as evidence that *"the wide participation from stakeholders, key to country ownership, is limited in those countries in which English is not a widely spoken language,"* and asked for funding proposals to be available in the languages of the countries where projects run, including Indigenous languages where Indigenous Peoples are affected.
+
+One evaluation, two readings: the Secretariat saw a modest effect on speed and no effect on access; civil society saw a barrier to participation that the numbers only begin to capture. Both are fair readings of different parts of the evidence. That is what a small piece of analysis can do. It did not settle the question, and it was never going to. It gave a policy discussion a number to argue with instead of an impression, and it showed which part of the problem, speed rather than access, the evidence actually points to.
 
 ## Sources
 
 Independent Evaluation Unit (2025). *Independent Evaluation of the GCF's Approach to Country Ownership*, Appendix 5: Correlation of time zone and language with GCF country portfolios. [Report page](https://ieu.greenclimate.fund/document/finalreport-coa2025).
 
 Green Climate Fund (2025). *Multilingualism*. GCF/B.43/Inf.12, Meeting of the Board, 27–30 October 2025. [Board document](https://www.greenclimate.fund/board-document/gcf-b43-inf12).
+
+GCF Observer Network of Civil Society, Indigenous Peoples, and Local Communities (2025). *Intervention on Multilingualism*, 43rd Meeting of the Board. [GCFWatch](https://www.gcfwatch.org/wp-content/uploads/2025/10/GCFWatch_B.43_Multilingualism.pdf).
