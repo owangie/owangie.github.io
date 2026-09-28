@@ -1,0 +1,13 @@
+# Repositories shown in the Code section of the home page (github.com/awongonki).
+- name: "GCF-Finance"
+  desc: "Exploratory analysis and forecasting of fund growth using Green Climate Fund portfolio data, 2015 to 2023."
+  lang: "Jupyter Notebook"
+- name: "gcf-writing-coach"
+  desc: "A tool to help write reports in the GCF evaluation style."
+  lang: "Python"
+- name: "Text-Classification-Langchain"
+  desc: "Text classification with LangChain."
+  lang: "TeX"
+- name: "edu-argentina"
+  desc: "Unsupervised machine learning to help plan an education programme in Argentina."
+  lang: "Jupyter Notebook"
