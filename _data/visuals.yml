@@ -3,6 +3,10 @@
   type: scatter
   title: "Is money flowing as fast as projects age?"
   caption: "Some projects have spent nearly all their money early; others have barely moved years in. Each bubble is a project: how far through its timeline it is, against how much of its funding has gone out. Bubbles below the diagonal are spending slower than the calendar suggests. Some of that is normal start up delay, some of it is not. Which would you look at first: the big bubbles below the line, or the small ones stuck near zero?"
+- id: "26622426"
+  type: scatter
+  title: "Do neighbours slow each other down?"
+  caption: "I wondered whether projects spanning several countries, especially countries that share a border, move money more slowly. Political tension between neighbours could hold up approvals, transfers or spending. A colleague's algorithm measures how close a project's countries are to each other; I grouped projects into four categories on that basis and plotted disbursement against project maturity. It is a hypothesis, not a verdict. What would you expect: do neighbours cooperate more easily, or clash more often?"
 - id: "27526316"
   type: chart
   size: half
