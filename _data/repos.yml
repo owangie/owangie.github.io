@@ -29,13 +29,6 @@
       desc: "A command-line assistant that rewrites, reviews and drafts text in evaluation register, driven by a single system prompt template."
       data: "No data. Bring your own draft."
 
-- group: "Portfolio analysis and trend projection"
-  items:
-    - name: "GCF-Finance"
-      year: 2024
-      desc: "Harmonises the Green Climate Fund's open project and financing workbooks (euro amounts converted to US dollars), then fits a linear trend to ask whether financing is on course for a 2030 target. A linear projection under a constant growth assumption, not a forecasting model."
-      data: "Included: public workbooks from the GCF Open Data Library, February 2024."
-
 - group: "Unsupervised learning"
   items:
     - name: "edu-argentina"
