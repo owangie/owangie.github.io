@@ -19,7 +19,6 @@
   caption: "The simplified approval process is meant for small, low risk projects. Adaptation dominates it: the largest block, support for the most vulnerable people and communities, is about USD 253 million, while all of mitigation fits in a thin strip. Is that by design, or do small mitigation projects struggle to find a way in?"
 - id: "24566148"
   type: chart
-  size: half
   title: "Which institutions receive the money?"
   caption: "Cumulative share and volume of financing commitments over time, by type of implementing institution. Who spends climate finance shapes who owns the results. If you ran the fund, how fast would you want that balance to move?"
 - id: "23945772"
@@ -29,5 +28,6 @@
   caption: "Every country names a national focal point for the fund, and where it sits in government matters: an environment ministry and a finance ministry see climate finance very differently. Which one would you put in charge?"
 - id: "20571355"
   type: map
+  size: half
   title: "Where does evaluation evidence come from?"
   caption: "Countries covered by evaluation missions and impact evaluations in this set. Grey countries have none. Does evaluation evidence follow need, or does it follow access? And which grey country would you study first?"
