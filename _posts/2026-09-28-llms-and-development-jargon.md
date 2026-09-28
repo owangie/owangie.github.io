@@ -34,15 +34,15 @@ So before any prompt, I write a taxonomy: a short list of the terms that matter 
 
 ## A keyword is not a finding
 
-Work on Indigenous Peoples taught me the sharpest version of this. The obvious approach is to search for "Indigenous" and count the hits. But many of the sentences that contain the word say the opposite of what a count would suggest. Sentences like these (illustrative, not quoted from any one document):
+Work on Indigenous Peoples taught me the sharpest version of this. The obvious approach is to search for "Indigenous" and count the hits. The evaluation of the Fund's approach to Indigenous Peoples found real cases where that goes wrong ([Annex II](https://ieu.greenclimate.fund/sites/default/files/document/annex-ii-ips-data-sources-and-methodology-top-2.pdf)):
 
-1. *"No Indigenous Peoples have been identified in the project area."*
-2. *"An Indigenous Peoples Plan will be prepared if required."*
-3. *"Indigenous women's cooperatives will co-manage the mangrove restoration component and share its revenues."*
+1. **FP176, Niger.** The project was tagged "indigenous people" and "indigenous peoples plan". Its proposal says: *"This project will be carried out in areas where there are no indigenous people."*
+2. **FP068, Georgia.** The proposal says there are no known Indigenous Peoples or ethnic groups in the project area, and plans stakeholder engagement only to confirm there is no impact on them.
+3. **FP182, Colombia.** The project will have no direct impact on indigenous reservations, though an ethnic differential approach was included in its risk analysis.
 
-All three contain the keyword. Only the third describes Indigenous Peoples actually taking part in the project. The first is a screening statement that rules them out. The second is a promise to do something later, only if needed.
+All three contain the keyword. None describes Indigenous Peoples taking part in the project. One rules them out, one checks they are not affected, one mentions them in a risk table.
 
-A keyword search counts all three. A model given clear definitions, and a few examples like these with the right answer next to them, can tell them apart, and it can quote the sentence that decided it so a person can check.
+A keyword search counts all three. A model given clear definitions, and a few examples like these with the right answer next to them, can tell them apart, and it can quote the sentence that decided it so a person can check. [More on how that evaluation found the right projects](/writing/who-is-in-the-room/).
 
 ## What I would tell anyone starting
 
