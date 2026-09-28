@@ -52,6 +52,22 @@ This is a correlation across countries, not proof that language causes delay. En
 
 What it does show is that the partners' concern is not just an impression. The same pattern shows up in the Fund's own data, which makes it a fair question for policy: if a fund wants every country to own its projects, it should make sure the language of the process is not quietly deciding who moves first.
 
-## Source
+## Where the finding went
+
+The analysis did not stay in an appendix. When the Secretariat brought its approach to multilingualism to the Board in October 2025 ([GCF/B.43/Inf.12](https://www.greenclimate.fund/board-document/gcf-b43-inf12)), it cited both results:
+
+> *"the recent IEU evaluation on the GCF's Approach to Country Ownership (B.43/04) found a modest but statistically robust correlation between English as an official language and shorter approval times"*
+
+and
+
+> *"close to zero systematic association between English as an official language and the number of projects and size of a country's GCF portfolio."*
+
+The paper weighed the two together. It concluded there was not yet broad evidence that accepting proposals in other languages would by itself widen access, and focused its approach on language skills: hiring and training so that regional teams and headquarters can work with countries in their own languages.
+
+That is what I hoped for from a small piece of analysis. It did not settle the question, and it was never going to. It gave a policy discussion a number to argue with instead of an impression, and it showed which part of the problem, speed rather than access, the evidence actually points to.
+
+## Sources
 
 Independent Evaluation Unit (2025). *Independent Evaluation of the GCF's Approach to Country Ownership*, Appendix 5: Correlation of time zone and language with GCF country portfolios. [Report page](https://ieu.greenclimate.fund/document/finalreport-coa2025).
+
+Green Climate Fund (2025). *Multilingualism*. GCF/B.43/Inf.12, Meeting of the Board, 27–30 October 2025. [Board document](https://www.greenclimate.fund/board-document/gcf-b43-inf12).
