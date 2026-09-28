@@ -3,7 +3,7 @@ layout: note
 title: "Does speaking English get your climate project approved faster?"
 date: 2026-09-28
 permalink: /writing/language-and-approval-times/
-excerpt: "A hypothesis from the field, a test on the whole portfolio, one result that disappeared under scrutiny and one that held. From the evaluation of the Green Climate Fund's approach to country ownership."
+excerpt: "A hypothesis from the field, a test on the whole portfolio, one result that disappeared under scrutiny and one that held, and later cited in the Board paper on multilingualism."
 ---
 
 The hypothesis came from the field, not from a spreadsheet. In interviews for the [evaluation of the Green Climate Fund's approach to country ownership](https://ieu.greenclimate.fund/document/finalreport-coa2025), partners from the World Bank, UNDP, FAO and others kept telling us the same thing. The Fund works almost entirely in English from its headquarters in Korea, with no regional or country offices. Many of the people preparing projects on the ground do not work in English, and some are many time zones away.
