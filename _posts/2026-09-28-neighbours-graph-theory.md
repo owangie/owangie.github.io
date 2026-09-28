@@ -42,4 +42,4 @@ The two-step rule asks only that each country has *one* partner nearby. So a pro
 
 ## Credits
 
-The classification algorithm was written by a colleague; I applied it to disbursement data and built the chart. The border graph was generated with pyvis.
+The classification algorithm was written by [Vlad Gerasimov](https://github.com/voismager), software engineer, now at UNICEF. I applied it to disbursement data and built the chart. The border graph was generated with pyvis.
