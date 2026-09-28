@@ -88,6 +88,13 @@
     .list .sub { display: block; font-size: 14px; color: var(--muted); margin-top: 2px; }
     .tag { font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 1px 7px; margin-left: 6px; white-space: nowrap; }
 
+    /* visualisations */
+    .viz { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px; margin-bottom: 20px; }
+    .viz h3 { font-size: 16px; font-weight: 600; margin: 0 0 4px; }
+    .viz p { font-size: 14px; color: var(--muted); margin: 0 0 14px; }
+    .viz .frame { border-radius: 10px; overflow: hidden; background: #fff; }
+    .viz .credit { font-size: 12px; color: var(--muted); margin: 10px 0 0; }
+
     footer { padding: 40px 0 56px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
 
     /* reveal on scroll */
@@ -103,8 +110,9 @@
     <a class="name" href="#top">{{ site.author.name }}</a>
     <ul>
       <li class="opt"><a href="#about">About</a></li>
+      <li><a href="#visuals">Visuals</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#publications">Publications</a></li>
+      <li class="opt"><a href="#publications">Publications</a></li>
       <li class="opt"><a href="#engagement">Engagement</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -129,10 +137,26 @@
     <div class="prose">{{ content }}</div>
   </section>
 
+  <section id="visuals">
+    <p class="label reveal">Visualisations</p>
+    <h2 class="reveal">Charts I have designed</h2>
+    <p class="intro reveal">Interactive charts I designed and built in Flourish for evaluation reporting. Hover or tap for details.</p>
+    {% for v in site.data.visuals %}
+    <figure class="viz reveal" style="margin-left:0;margin-right:0">
+      <h3>{{ v.title }}</h3>
+      <p>{{ v.caption }}</p>
+      <div class="frame">
+        <div class="flourish-embed flourish-{{ v.type }}" data-src="visualisation/{{ v.id }}"><noscript><img src="https://public.flourish.studio/visualisation/{{ v.id }}/thumbnail" width="100%" alt="{{ v.title }}" /></noscript></div>
+      </div>
+      <p class="credit"><a href="https://public.flourish.studio/visualisation/{{ v.id }}/">Open full screen</a></p>
+    </figure>
+    {% endfor %}
+  </section>
+
   <section id="projects">
     <p class="label reveal">Projects</p>
     <h2 class="reveal">Selected work</h2>
-    <p class="intro reveal">Tools and analyses built at the Green Climate Fund and UNDP. Some are finished; others are ongoing.</p>
+    <p class="intro reveal">Tools I have built at the Green Climate Fund and UNDP.</p>
     <div class="grid">
       {% for p in site.portfolio %}
       <article class="card reveal">
@@ -190,6 +214,7 @@
   <div class="wrap">{{ site.author.location }}</div>
 </footer>
 
+<script src="https://public.flourish.studio/resources/embed.js"></script>
 <script>
   (function () {
     var els = document.querySelectorAll('.reveal');
