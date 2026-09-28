@@ -7,6 +7,10 @@
   type: scatter
   title: "Disbursement and project maturity"
   caption: "Disbursement plotted against project maturity across the GCF portfolio, prepared for the Third Performance Review."
+- id: "22701053"
+  type: treemap
+  title: "Finance by GCF results area"
+  caption: "GCF financing broken down by results area, prepared for the 2025 Independent Evaluation of the Simplified Approval Process."
 - id: "27526316"
   type: chart
   title: "Private sector share in grant equivalent terms"
