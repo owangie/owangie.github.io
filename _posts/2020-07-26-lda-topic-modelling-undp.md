@@ -36,7 +36,7 @@ data <- read_excel("innovation_descriptions.xlsx") |>
 noise <- c("support", "people", "develop", "developed", "development", "establish",
            "established", "provide", "provided", "providing", "approach", "approaches",
            "increase", "conduct", "process", "test", "tested", "sdg")
-pattern <- paste0("\b(", paste(noise, collapse = "|"), ")\b")   # whole words only
+pattern <- paste0("\\b(", paste(noise, collapse = "|"), ")\\b")   # whole words only
 data$Cleaned_Translation <- gsub(pattern, "", data$Cleaned_Translation, ignore.case = TRUE)
 
 tokens <- data |>
