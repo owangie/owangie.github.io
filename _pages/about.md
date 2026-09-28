@@ -19,7 +19,7 @@ Independent evaluation reports and working papers I have co-authored at the GCF 
 
 Engagement
 ======
-External working groups I take part in, currently the UN Evaluation Group work on AI. [See engagement](/talks/)
+External engagement, currently the UN Evaluation Group Evaluation Practice Exchange Seminar. [See engagement](/talks/)
 
 Get in touch
 ======
