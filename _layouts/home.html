@@ -108,6 +108,14 @@
     .repo h3 a:hover { color: var(--accent); }
     .repo svg { flex: none; fill: var(--muted); }
     .repo .lang { font-size: 12px; color: var(--muted); }
+    .codegroup { margin-bottom: 8px; }
+    .coderow { padding: 14px 0; border-top: 1px solid var(--line); }
+    .coderow p { margin: 0 0 6px; }
+    .codename { font-family: var(--sans); font-weight: 600; }
+    .codename a { color: var(--text); text-decoration: none; }
+    .codename a:hover { color: var(--accent); }
+    .codename .yr { font-weight: 400; color: var(--muted); font-size: 12px; margin-left: 6px; }
+    .codedata { font-size: 14px; color: var(--muted); }
 
     .talk { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 24px; margin-bottom: 20px; }
     .talk h3 { font-size: 17px; font-weight: 600; margin: 0 0 4px; }
@@ -411,16 +419,20 @@
     <h2 class="reveal">From my GitHub</h2>
     </div>
     <div class="sbody">
-    <p class="intro reveal">Selected public repositories. More at <a href="https://github.com/{{ site.author.github }}">github.com/{{ site.author.github }}</a>.</p>
-    <div class="grid">
-      {% for r in site.data.repos %}
-      <article class="card repo reveal">
-        <h3><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"/></svg><a href="https://github.com/{{ site.author.github }}/{{ r.name }}">{{ r.name }}</a></h3>
-        <p>{{ r.desc }}</p>
-        <p class="lang">{{ r.lang }}</p>
-      </article>
+    <p class="intro reveal">Code and data, grouped by method. Each entry says what the code implements, where the walkthrough is, and whether the data can be shared. More at <a href="https://github.com/{{ site.author.github }}">github.com/{{ site.author.github }}</a>.</p>
+    {% for g in site.data.repos %}
+    <div class="codegroup reveal">
+      <h3 class="sub">{{ g.group }}</h3>
+      {% for r in g.items %}
+      <div class="coderow">
+        <p class="codename"><a href="https://github.com/{{ site.author.github }}/{{ r.name }}">{{ r.name }}</a> {% if r.year %}<span class="yr">{{ r.year }}</span>{% endif %}</p>
+        <p>{{ r.desc }}{% if r.credit %} {{ r.credit }}{% endif %}</p>
+        <p class="codedata"><b>Data.</b> {{ r.data }}</p>
+        <a class="chip" href="https://github.com/{{ site.author.github }}/{{ r.name }}">Code</a>{% if r.walkthrough %}<a class="chip" href="{{ r.walkthrough }}">Walkthrough</a>{% endif %}{% if r.extra_url %}<a class="chip" href="{{ r.extra_url }}">{{ r.extra_label }}</a>{% endif %}
+      </div>
       {% endfor %}
     </div>
+    {% endfor %}
       </div>
   </section>
 

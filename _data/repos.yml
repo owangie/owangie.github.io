@@ -1,19 +1,44 @@
-# Repositories shown in the Code section of the home page (github.com/awongonki).
-- name: "country_network_html"
-  desc: "Classifies multi-country projects by how connected their countries are, using a border graph, breadth-first search and two-step neighbourhoods."
-  lang: "Python, networkx"
-- name: "undp_LDA_2020"
-  desc: "Step by step LDA topic modelling of UNDP innovation project descriptions (2020): coherence to choose K, top terms, Hellinger dendrogram."
-  lang: "R, textmineR"
-- name: "GCF-Finance"
-  desc: "Exploratory analysis and forecasting of fund growth using Green Climate Fund portfolio data, 2015 to 2023."
-  lang: "Jupyter Notebook"
-- name: "gcf-writing-coach"
-  desc: "A tool to help write reports in the GCF evaluation style."
-  lang: "Python"
-- name: "Text-Classification-Langchain"
-  desc: "Text classification with LangChain."
-  lang: "TeX"
-- name: "edu-argentina"
-  desc: "Unsupervised machine learning to help plan an education programme in Argentina."
-  lang: "Jupyter Notebook"
+# Code section of the home page, grouped by method (github.com/awongonki).
+# Each entry: repo, what it implements (with method references), links, and a data note.
+- group: "Networks and graph algorithms"
+  items:
+    - name: "country-connectivity"
+      desc: "Classifies multi-country projects by how connected their countries are. Builds a land-border graph, tests whether a project's countries form one connected block with breadth-first search on the induced subgraph, and applies a looser rule that allows one country in between (the square of the graph). Built on networkx (Hagberg, Schult and Swart 2008), with six unit tests."
+      credit: "The original classification script was written by Vlad Gerasimov; this repository documents the maths and adds tests."
+      walkthrough: "/writing/neighbours-graph-theory/"
+      extra_label: "Interactive graph"
+      extra_url: "/assets/graphs/border-graph.html"
+      data: "Included: 588 land-border pairs (data/borders.csv)."
+
+- group: "Text as data: topic models"
+  items:
+    - name: "undp_LDA_2020"
+      year: 2020
+      desc: "Latent Dirichlet Allocation (Blei, Ng and Jordan 2003) in R with textmineR. Builds a unigram and bigram document-term matrix, chooses the number of topics by probabilistic coherence, and compares topics with the Hellinger distance and Ward clustering."
+      walkthrough: "/writing/lda-topic-modelling-undp/"
+      data: "Not shared: the UNDP project descriptions are internal. Aggregate figures are included, and the script runs on any table with an ID and a text column."
+
+- group: "Text as data: language models"
+  items:
+    - name: "Text-Classification-Langchain"
+      year: 2024
+      desc: "Map-reduce summarisation with LangChain and GPT-4 over UNDP programme evaluation text with more than 100 text columns, to answer one question: what context, opportunities and challenges did country offices face in 2023?"
+      data: "Not shared: the evaluation data is internal to UNDP."
+    - name: "gcf-writing-coach"
+      year: 2026
+      desc: "A command-line assistant that rewrites, reviews and drafts text in evaluation register, driven by a single system prompt template."
+      data: "No data. Bring your own draft."
+
+- group: "Portfolio analysis and trend projection"
+  items:
+    - name: "GCF-Finance"
+      year: 2024
+      desc: "Harmonises the Green Climate Fund's open project and financing workbooks (euro amounts converted to US dollars), then fits a linear trend to ask whether financing is on course for a 2030 target. A linear projection under a constant growth assumption, not a forecasting model."
+      data: "Included: public workbooks from the GCF Open Data Library, February 2024."
+
+- group: "Unsupervised learning"
+  items:
+    - name: "edu-argentina"
+      year: 2019
+      desc: "Principal component analysis (Pearson 1901) and k-means clustering (MacQueen 1967) on INDEC development indicators for Argentina's provinces, to group them by development level and choose a diverse set for an education pilot. R: dplyr, ggplot2."
+      data: "Included: provincial indicators published by INDEC (argentina.csv)."
