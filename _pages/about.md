@@ -27,7 +27,7 @@ Between sessions, the officials talked about what held them back at home: hygien
 
 **Then technology.** Amazon Web Services in Hong Kong was my first look at the business side of tech. I worked alongside the sales, marketing and policy teams, and next to the developer who was fine-tuning Alexa's speech. I saw how a technical product only matters once someone can explain what it does for the customer.
 
-Amazon's culture, from the interview loop onwards, shaped how I work: be direct, stay focused on solutions, and when you raise a problem, bring a way to fix it. I still work that way.
+Getting in took eight rounds of interviews (no LeetCode, luckily). Two of Amazon's [leadership principles](https://www.amazon.jobs/content/en/our-workplace/leadership-principles) stuck with me: *Invent and Simplify*, and *Learn and Be Curious*. I still work that way: be direct, bring a fix when I raise a problem, and make the complicated thing simple enough for someone to use.
 
 **Then the numbers got serious**, during a Master of Public Policy in development economics at the University of Maryland. For my research paper, with the World Resources Institute in Washington, DC, and the UN Foundation, I mapped how many weather and climate stations the least developed countries actually have, using NOAA's global station data, and asked what explains the gaps. My advisor was [Professor Anand Patwardhan](https://scholar.google.com/citations?user=t7DtrlwAAAAJ).
 
