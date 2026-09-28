@@ -7,6 +7,44 @@
   type: scatter
   title: "Do neighbours slow each other down?"
   caption: "I wondered whether projects spanning several countries, especially countries that share a border, move money more slowly. Political tension between neighbours could hold up approvals, transfers or spending. A colleague's algorithm measures how connected a project's countries are, and I plotted disbursement against maturity in four groups: single country, weak regional, strong regional and multi-regional. More of the strong regional projects, the blue dots, sit below the line than above it. It is a hypothesis, not a verdict. What would you expect: do neighbours cooperate more easily, or clash more often?"
+  graph: "/assets/graphs/border-graph.html"
+  graph_caption: "The neighbour graph behind the classification: 243 countries and territories as nodes, 588 shared borders as edges. Click a country to highlight its neighbours and their neighbours."
+  method: "Each country is a node in a graph G, with an edge between neighbours. A project's countries are StrongRegional if they form one connected subgraph of G, WeakRegional if every country is within two steps of another, and MultiRegional otherwise. Built with networkx."
+  code: |
+    import networkx as nx
+
+    def connected_within_two(G, nodes):
+        for u in nodes:
+            # neighbours (distance 1)
+            neigh = set(G.neighbors(u))
+            # neighbours of neighbours (distance 2)
+            two_step = set()
+            for n in neigh:
+                two_step.update(G.neighbors(n))
+
+            # candidates reachable within 2 steps
+            reachable = neigh | two_step
+
+            # check if u can reach at least one other node in the set
+            if not (set(nodes) - {u}) & reachable:
+                return False
+
+        return True
+
+    def check_connection(countries):
+        if len(countries) == 1:
+            return 0                      # SingleCountry
+
+        H = G.subgraph(countries)
+
+        if len(H) > 0 and nx.is_connected(H):
+            return 1                      # StrongRegional
+        elif connected_within_two(G, countries):
+            return 2                      # WeakRegional
+        else:
+            return 999                    # MultiRegional
+
+    project_df["Connectivity"] = project_df["Countries"].apply(check_connection)
 - id: "27526316"
   type: chart
   size: half
