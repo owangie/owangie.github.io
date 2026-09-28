@@ -6,7 +6,7 @@ collection: portfolio
 
 Developed more than 30 Power BI dashboards used across UNDP country offices, covering programme performance, the COVID-19 response, evaluation results and SDG progress. Data drawn from ATLAS and Quantum, Results Oriented Annual Reports and evaluation records.
 
-The largest was Project-Based Portfolio Analytics: one view of projects, outputs, budget and expense across offices, broken down by region, income group, funding source and gender marker, with filters for the COVID-19 response, South-South cooperation, small island and fragile states and thematic areas. Its tabs covered annual reporting challenges, funding gaps, results and resources, and an Evaluation Scorecard.
+One of them was Project-Based Portfolio Analytics: one view of projects, outputs, budget and expense across offices, broken down by region, income group, funding source and gender marker, with filters for the COVID-19 response, South-South cooperation, small island and fragile states and thematic areas. Its tabs covered annual reporting challenges, funding gaps, results and resources, and an Evaluation Scorecard.
 
 The Evaluation Scorecard gave managers and staff a real time view of evaluation performance, with a traffic light for each KPI: green for on track, amber for a concern, red for off track and needing corrective action. Five KPIs, each against a 2020 baseline:
 
