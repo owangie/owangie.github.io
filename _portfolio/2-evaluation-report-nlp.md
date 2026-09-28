@@ -1,9 +1,9 @@
 ---
-title: "Text analysis of UNDP evaluation reports"
-excerpt: "Machine coding and synthesis of more than 15,000 evaluation reports."
+title: "Mapping 15,000 UNDP evaluations to the SDGs"
+excerpt: "Topic modelling on mid-term and final evaluation reports, matched to Sustainable Development Goal categories."
 collection: portfolio
 ---
 
-Automated the coding and synthesis of more than 15,000 UNDP evaluation reports using NLP and machine learning, for use in corporate reporting, portfolio analysis and performance monitoring.
+UNDP had more than 15,000 mid-term and final evaluation reports, and no quick way to see which development goals they spoke to. I matched the reports to Sustainable Development Goal categories and used bag of words topic modelling (Latent Dirichlet Allocation) to find the themes running through them, then visualised the topics so colleagues could explore them. The results fed corporate reporting, portfolio analysis and performance monitoring.
 
-*Python, R, NLP, machine learning*
+*Python, R, bag of words, LDA topic modelling*
