@@ -109,6 +109,15 @@
     .repo svg { flex: none; fill: var(--muted); }
     .repo .lang { font-size: 12px; color: var(--muted); }
 
+    .talk { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 24px; margin-bottom: 20px; }
+    .talk h3 { font-size: 17px; font-weight: 600; margin: 0 0 4px; }
+    .talk-meta { font-size: 14px; color: var(--muted); margin: 0 0 16px; }
+    .talk-body p, .talk-body li { font-size: 15px; }
+    .talk-body ul { padding-left: 20px; margin: 0 0 14px; }
+    .talk-fig { margin: 18px 0 8px; }
+    .talk-fig img { width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); background: #fff; }
+    .talk-fig figcaption { font-size: 13px; color: var(--muted); margin-top: 8px; }
+
     footer { padding: 40px 0 56px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
 
     /* reveal on scroll */
@@ -224,17 +233,14 @@
   <section id="engagement">
     <p class="label reveal">Engagement</p>
     <h2 class="reveal">Talks and seminars</h2>
-    <ul class="list reveal">
-      {% for t in site.talks reversed %}
-      <li>
-        <span class="yr">{% if t.year %}{{ t.year }}{% elsif t.hide_date %}{% else %}{{ t.date | date: "%Y" }}{% endif %}</span>
-        <span>
-          {% if t.link %}<a class="t" href="{{ t.link }}">{{ t.title }}</a>{% else %}<span class="t">{{ t.title }}</span>{% endif %}
-          <span class="sub">{{ t.content | strip_html | strip | split: "View the slides" | first | strip }}{% if t.link %} <a href="{{ t.link }}">View the slides</a>{% endif %}</span>
-        </span>
-      </li>
-      {% endfor %}
-    </ul>
+    {% for t in site.talks reversed %}
+    <article class="talk reveal">
+      <h3>{{ t.title }}</h3>
+      <p class="talk-meta">{{ t.venue }}{% if t.location %} · {{ t.location }}{% endif %}{% if t.when %} · {{ t.when }}{% elsif t.year %} · {{ t.year }}{% endif %}</p>
+      <div class="talk-body">{{ t.content }}</div>
+      {% if t.link %}<p><a class="btn" href="{{ t.link }}">View the slides</a></p>{% endif %}
+    </article>
+    {% endfor %}
   </section>
 
   <section id="contact" class="reveal">
