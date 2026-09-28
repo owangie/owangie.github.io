@@ -13,13 +13,13 @@
   <style>
     :root {
       --bg: #fafaf9; --surface: #ffffff; --text: #18181b; --muted: #6b6b73;
-      --line: #e7e5e4; --accent: #2f5d50; --accent-soft: #e8f0ed;
+      --line: #e7e5e4; --band: #f2f1ef; --accent: #2f5d50; --accent-soft: #e8f0ed;
       color-scheme: light;
     }
     @media (prefers-color-scheme: dark) {
       :root {
         --bg: #111113; --surface: #1a1a1d; --text: #ededef; --muted: #9b9ba3;
-        --line: #2a2a2e; --accent: #8cc4b1; --accent-soft: #1e2b27;
+        --line: #2a2a2e; --band: #161618; --accent: #8cc4b1; --accent-soft: #1e2b27;
         color-scheme: dark;
       }
     }
@@ -31,7 +31,7 @@
       -webkit-font-smoothing: antialiased;
     }
     a { color: inherit; }
-    .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
 
     /* nav */
     nav {
@@ -119,14 +119,14 @@
     .talk-fig figcaption { font-size: 13px; color: var(--muted); margin-top: 8px; }
 
     /* AI section */
-    .flow { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 10px; margin: 8px 0 32px; counter-reset: step; }
+    .flow { padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 10px; margin: 8px 0 32px; counter-reset: step; }
     .flow li { list-style: none; position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px; }
     .flow li b { display: block; font-size: 14px; margin-bottom: 4px; }
     .flow li b::before { counter-increment: step; content: counter(step); display: inline-grid; place-items: center; width: 20px; height: 20px; margin-right: 8px;
       border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-size: 12px; }
     .flow li span { font-size: 13px; color: var(--muted); line-height: 1.5; display: block; }
-    .flow li:not(:last-child)::after { content: "92"; position: absolute; right: -10px; top: 50%; transform: translate(50%,-50%); color: var(--muted); font-size: 14px; z-index: 1; }
-    @media (max-width: 760px) { .flow { grid-template-columns: 1fr; } .flow li:not(:last-child)::after { content: "93"; right: 50%; top: auto; bottom: -10px; transform: translate(50%,50%); } }
+    .flow li:not(:last-child)::after { content: "→"; position: absolute; right: -10px; top: 50%; transform: translate(50%,-50%); color: var(--muted); font-size: 14px; z-index: 1; }
+    @media (max-width: 760px) { .flow { grid-template-columns: 1fr; } .flow li:not(:last-child)::after { content: "↓"; right: 50%; top: auto; bottom: -10px; transform: translate(50%,50%); } }
     h3.sub { font-size: 16px; font-weight: 600; margin: 28px 0 12px; }
     .kv { width: 100%; border-collapse: collapse; font-size: 14px; }
     .kv th, .kv td { text-align: left; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
@@ -135,6 +135,21 @@
     .tip { border-left: 3px solid var(--accent); padding: 4px 0 4px 14px; }
     .tip b { display: block; font-size: 15px; margin-bottom: 2px; }
     .tip span { font-size: 14px; color: var(--muted); }
+
+    /* two-column sections with alternating bands (after lehner.xyz) */
+    section { display: grid; grid-template-columns: 240px minmax(0,1fr); column-gap: 48px; padding: 64px 0; border-top: 0; }
+    section .shead h2 { font-size: 28px; line-height: 1.2; font-weight: 500; }
+    section .sbody > .intro:first-child { margin-top: 2px; }
+    section:nth-of-type(even) { background: var(--band); box-shadow: 0 0 0 100vmax var(--band); clip-path: inset(0 -100vmax); }
+    @media (max-width: 820px) { section { grid-template-columns: 1fr; padding: 48px 0; } section .shead h2 { font-size: 24px; } }
+    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+    .facts h3 { font-size: 15px; font-weight: 600; margin: 0 0 8px; }
+    .facts ul { margin: 0; padding-left: 18px; font-size: 14px; }
+    .facts li { margin-bottom: 6px; }
+    .facts small { display: block; color: var(--muted); font-size: 12px; }
+    @media (max-width: 560px) { .facts { grid-template-columns: 1fr; } }
+    .chip { display: inline-block; font-size: 11px; color: var(--accent); border: 1px solid var(--accent); border-radius: 5px; padding: 0 6px; margin: 6px 6px 0 0; text-decoration: none; }
+    .chip:hover { background: var(--accent-soft); }
 
     footer { padding: 40px 0 56px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
 
@@ -150,15 +165,11 @@
   <div class="wrap">
     <a class="name" href="#top">{{ site.author.name }}</a>
     <ul>
-      <li class="opt"><a href="#about">About</a></li>
       <li><a href="#ai">AI</a></li>
       <li><a href="#visuals">Visuals</a></li>
       <li class="opt"><a href="#writing">Writing</a></li>
-      <li><a href="#projects">Projects</a></li>
       <li class="opt"><a href="#publications">Publications</a></li>
-      <li class="opt"><a href="#code">Code</a></li>
       <li class="opt"><a href="#engagement">Engagement</a></li>
-      <li class="opt"><a href="#reading">Reading</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -181,14 +192,33 @@
   </header>
 
   <section id="about" class="reveal">
+    <div class="shead">
     <p class="label">About</p>
     <h2>About me</h2>
+    </div>
+    <div class="sbody">
     <div class="prose">{{ content }}</div>
+      <div class="facts">
+        <div><h3>Interests</h3><ul>
+          <li>Results measurement and indicator quality</li>
+          <li>Language models for document analysis</li>
+          <li>Climate finance and portfolio performance</li>
+          <li>Impact evaluation and counterfactuals</li>
+        </ul></div>
+        <div><h3>Education</h3><ul>
+          <li>Master of Public Policy, 2019<small>University of Maryland</small></li>
+          <li>B.A. Portuguese Studies and Foreign Affairs, 2017<small>Beijing Foreign Studies University</small></li>
+        </ul></div>
+      </div>
+      </div>
   </section>
 
   <section id="ai">
+    <div class="shead">
     <p class="label reveal">AI in my work</p>
     <h2 class="reveal">How I use AI and language models</h2>
+    </div>
+    <div class="sbody">
     <p class="intro reveal">Most of my AI work applies language models to documents that people would otherwise read one by one: funding proposals, evaluation reports and survey responses. This is the workflow I use, the data and models behind it, and what I have learned along the way. <a href="{{ site.baseurl }}/writing/llm-screening-private-sector/">Read a worked example.</a></p>
     <ol class="flow reveal">
       {% for s in site.data.ai.pipeline %}<li><b>{{ s.step }}</b><span>{{ s.text }}</span></li>{% endfor %}
@@ -209,11 +239,15 @@
     <div class="tips reveal">
       {% for t in site.data.ai.tips %}<div class="tip"><b>{{ t.title }}</b><span>{{ t.text }}</span></div>{% endfor %}
     </div>
+      </div>
   </section>
 
   <section id="writing">
+    <div class="shead">
     <p class="label reveal">Writing</p>
     <h2 class="reveal">Notes</h2>
+    </div>
+    <div class="sbody">
     <ul class="list reveal">
       {% for post in site.posts %}
       <li>
@@ -225,11 +259,15 @@
       </li>
       {% endfor %}
     </ul>
+      </div>
   </section>
 
   <section id="visuals">
+    <div class="shead">
     <p class="label reveal">Visualisations</p>
     <h2 class="reveal">Charts I have designed</h2>
+    </div>
+    <div class="sbody">
     <p class="intro reveal">Interactive charts I designed and built in Flourish for evaluation reporting. Hover or tap for details.</p>
     <div class="vizgrid">
     {% for v in site.data.visuals %}
@@ -243,11 +281,15 @@
     </figure>
     {% endfor %}
     </div>
+      </div>
   </section>
 
   <section id="projects">
+    <div class="shead">
     <p class="label reveal">Projects</p>
     <h2 class="reveal">Selected work</h2>
+    </div>
+    <div class="sbody">
     <p class="intro reveal">Tools I have built at the Green Climate Fund and UNDP.</p>
     <div class="grid">
       {% for p in site.portfolio %}
@@ -257,11 +299,15 @@
       </article>
       {% endfor %}
     </div>
+      </div>
   </section>
 
   <section id="publications">
+    <div class="shead">
     <p class="label reveal">Publications</p>
     <h2 class="reveal">Reports and papers</h2>
+    </div>
+    <div class="sbody">
     <p class="intro reveal">Independent evaluation reports and working papers co-authored at the GCF Independent Evaluation Unit. These are team products; co-authors are named in each report.</p>
     <ul class="list reveal">
       {% assign pubs = site.publications | sort: "date" | reverse %}
@@ -271,15 +317,20 @@
         <span>
           <a class="t" href="{{ p.paperurl }}">{{ p.title }}</a>{% if p.category == "working" %}<span class="tag">Working paper</span>{% endif %}
           <span class="sub">{{ p.excerpt | strip_html }}</span>
+          <a class="chip" href="{{ p.paperurl }}">Report</a>
         </span>
       </li>
       {% endfor %}
     </ul>
+      </div>
   </section>
 
   <section id="code">
+    <div class="shead">
     <p class="label reveal">Code</p>
     <h2 class="reveal">On GitHub</h2>
+    </div>
+    <div class="sbody">
     <p class="intro reveal">Selected public repositories. More at <a href="https://github.com/{{ site.author.github }}">github.com/{{ site.author.github }}</a>.</p>
     <div class="grid">
       {% for r in site.data.repos %}
@@ -290,11 +341,15 @@
       </article>
       {% endfor %}
     </div>
+      </div>
   </section>
 
   <section id="engagement">
+    <div class="shead">
     <p class="label reveal">Engagement</p>
     <h2 class="reveal">Talks and seminars</h2>
+    </div>
+    <div class="sbody">
     {% for t in site.talks reversed %}
     <article class="talk reveal">
       <h3>{{ t.title }}</h3>
@@ -303,11 +358,15 @@
       <div class="btns">{% if t.link %}<a class="btn" href="{{ t.link }}">{{ t.link_label | default: "View the slides" }}</a>{% endif %}{% if t.link2 %}<a class="btn" href="{{ t.link2 }}">{{ t.link2_label }}</a>{% endif %}</div>
     </article>
     {% endfor %}
+      </div>
   </section>
 
   <section id="reading">
+    <div class="shead">
     <p class="label reveal">Reading</p>
     <h2 class="reveal">Books I recommend</h2>
+    </div>
+    <div class="sbody">
     <ul class="list reveal">
       {% for b in site.data.books %}
       <li>
@@ -319,16 +378,21 @@
       </li>
       {% endfor %}
     </ul>
+      </div>
   </section>
 
   <section id="contact" class="reveal">
+    <div class="shead">
     <p class="label">Contact</p>
     <h2>Get in touch</h2>
+    </div>
+    <div class="sbody">
     <p class="intro">The best way to reach me is on LinkedIn. My CV is available on request.</p>
     <div class="btns">
       <a class="btn primary" href="https://www.linkedin.com/in/{{ site.author.linkedin }}/">Message me on LinkedIn</a>
       <a class="btn" href="https://github.com/{{ site.author.github }}">GitHub</a>
     </div>
+      </div>
   </section>
 
 </main>
