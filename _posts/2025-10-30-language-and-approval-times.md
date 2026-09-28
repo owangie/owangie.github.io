@@ -48,7 +48,25 @@ A correlation of –0.25 is modest. But it is statistically robust, and the t-te
 
 ## What it does and does not mean
 
-This is a correlation across countries, not proof that language causes delay. English speaking countries differ in other ways: many share legal and administrative traditions, some have more experience with international funds, and the institutions they work through vary. A proper causal answer would need controls for those differences, or better, variation in language support over time.
+This is a correlation across countries, not proof that language causes delay. It is worth writing down why, because the reason is a formula, not a hunch.
+
+Suppose approval time depends on language and on some other country trait z, say how much experience a country has with international funds:
+
+$$\text{Days}_i = \alpha + \beta\,\text{English}_i + \gamma\, z_i + \varepsilon_i$$
+
+If I leave z out and compare on language alone, the slope I estimate is not β. In large samples it converges to
+
+$$\operatorname{plim} \hat{\beta} = \beta + \gamma\,\frac{\operatorname{Cov}(\text{English}_i, z_i)}{\operatorname{Var}(\text{English}_i)}$$
+
+This is omitted variable bias (Wooldridge 2010, chapter 4). English speaking countries share legal traditions, and colonial and language ties shape who receives aid in the first place ([Alesina and Dollar 2000](https://doi.org/10.1023/A:1009874203400)). If those traits also speed up approval (γ below zero) and are more common where English is official (a positive covariance), part of the –0.25 belongs to them, not to language.
+
+A fuller test would move to the project level and hold the obvious differences fixed:
+
+$$\text{Days}_{i} = \alpha + \beta\,\text{English}_{c(i)} + \mathbf{x}_i'\boldsymbol{\theta} + \delta_{\text{region}} + \delta_{\text{year}} + \varepsilon_i$$
+
+where **x** holds the entity type (international or direct access), project size and least developed or small island status, with standard errors clustered by country, since language only varies between countries. Even that is still observational. The cleanest answer would come from change over time: if the Fund starts accepting proposals in other languages, a difference in differences comparing approval times before and after, for countries that gain from the change against those that do not, would identify the effect of the language of the process itself.
+
+Trade economists have asked a version of this question for decades. Sharing a language raises trade between countries ([Egger and Lassmann 2012](https://doi.org/10.1016/j.econlet.2012.02.018)), and [Melitz and Toubal (2014)](https://doi.org/10.1016/j.jinteco.2014.04.004) separate the effect of a shared native language from that of a language people merely speak or can translate. That distinction matters here: a barrier that translation can remove is one a fund can fix.
 
 What it does show is that the partners' concern is not just an impression. The same pattern shows up in the Fund's own data, which makes it a fair question for policy: if a fund wants every country to own its projects, it should make sure the language of the process is not quietly deciding who moves first.
 
@@ -75,3 +93,11 @@ Independent Evaluation Unit (2025). *Independent Evaluation of the GCF's Approac
 Green Climate Fund (2025). *Multilingualism*. GCF/B.43/Inf.12, Meeting of the Board, 27–30 October 2025. [Board document](https://www.greenclimate.fund/board-document/gcf-b43-inf12).
 
 GCF Observer Network of Civil Society, Indigenous Peoples, and Local Communities (2025). *Intervention on Multilingualism*, 43rd Meeting of the Board. [GCFWatch](https://www.gcfwatch.org/wp-content/uploads/2025/10/GCFWatch_B.43_Multilingualism.pdf).
+
+Alesina, A. and Dollar, D. (2000). Who gives foreign aid to whom and why? *Journal of Economic Growth*, 5, 33–63. [doi:10.1023/A:1009874203400](https://doi.org/10.1023/A:1009874203400).
+
+Egger, P. H. and Lassmann, A. (2012). The language effect in international trade: A meta-analysis. *Economics Letters*, 116(2), 221–224. [doi:10.1016/j.econlet.2012.02.018](https://doi.org/10.1016/j.econlet.2012.02.018).
+
+Melitz, J. and Toubal, F. (2014). Native language, spoken language, translation and trade. *Journal of International Economics*, 93(2), 351–363. [doi:10.1016/j.jinteco.2014.04.004](https://doi.org/10.1016/j.jinteco.2014.04.004).
+
+Wooldridge, J. M. (2010). *Econometric Analysis of Cross Section and Panel Data*, 2nd edition. MIT Press.
