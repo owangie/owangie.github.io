@@ -3,12 +3,12 @@
 - group: "Networks and graph algorithms"
   items:
     - name: "country-connectivity"
-      desc: "Classifies multi-country projects by how connected their countries are. Builds a land-border graph, tests whether a project's countries form one connected block with breadth-first search on the induced subgraph, and applies a looser rule that allows one country in between (the square of the graph). Built on networkx (Hagberg, Schult and Swart 2008), with six unit tests."
+      desc: "Classifies multi-country projects by how connected their countries are. Builds a graph of neighbouring countries, tests whether a project's countries form one connected block with breadth-first search on the induced subgraph, and applies a looser rule that allows one country in between (the square of the graph). Built on networkx (Hagberg, Schult and Swart 2008), with six unit tests."
       credit: "The original classification script was written by Vlad Gerasimov; this repository documents the maths and adds tests."
       walkthrough: "/writing/neighbours-graph-theory/"
       extra_label: "Interactive graph"
       extra_url: "/assets/graphs/border-graph.html"
-      data: "Included: 588 land-border pairs (data/borders.csv)."
+      data: "Included: 588 neighbour pairs, mostly land borders plus some sea neighbours (data/borders.csv)."
 
 - group: "Text as data: topic models"
   items:
