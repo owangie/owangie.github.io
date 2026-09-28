@@ -1,7 +1,7 @@
 ---
 layout: note
 title: "Does speaking English get your climate project approved faster?"
-date: 2026-09-28
+date: 2025-10-30
 permalink: /writing/language-and-approval-times/
 excerpt: "A hypothesis from the field, a test on the whole portfolio, one result that disappeared under scrutiny and one that held, and how both the Secretariat and civil society cited it in the Board debate on multilingualism."
 ---
