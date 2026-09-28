@@ -1,12 +1,14 @@
 ---
 title: "UNDP corporate dashboards"
-excerpt: "Power BI dashboards on programme performance, evaluation results and SDG progress, including a traffic light KPI monitor for evaluation compliance."
+excerpt: "Power BI dashboards on programme performance, evaluation results and SDG progress, including a portfolio analytics tool with an evaluation scorecard."
 collection: portfolio
 ---
 
 Developed more than 30 Power BI dashboards used across UNDP country offices, covering programme performance, the COVID-19 response, evaluation results and SDG progress. Data drawn from ATLAS and Quantum, Results Oriented Annual Reports and evaluation records.
 
-One of them monitored evaluation compliance with a traffic light system: green for on track, amber for a concern, red for off track and needing corrective action. It tracked five KPIs against a 2020 baseline:
+The largest was Project-Based Portfolio Analytics: one view of projects, outputs, budget and expense across offices, broken down by region, income group, funding source and gender marker, with filters for the COVID-19 response, South-South cooperation, small island and fragile states and thematic areas. Its tabs covered annual reporting challenges, funding gaps, results and resources, and an Evaluation Scorecard.
+
+The Evaluation Scorecard gave managers and staff a real time view of evaluation performance, with a traffic light for each KPI: green for on track, amber for a concern, red for off track and needing corrective action. Five KPIs, each against a 2020 baseline:
 
 * Overdue evaluations: baseline 18%, green at 5% or less
 * Quality of decentralised evaluations, on a 1 to 6 scale: baseline 4, green at 5 or 6
