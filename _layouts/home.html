@@ -238,7 +238,7 @@
       <h3>{{ t.title }}</h3>
       <p class="talk-meta">{{ t.venue }}{% if t.location %} · {{ t.location }}{% endif %}{% if t.when %} · {{ t.when }}{% elsif t.year %} · {{ t.year }}{% endif %}</p>
       <div class="talk-body">{{ t.content }}</div>
-      {% if t.link %}<p><a class="btn" href="{{ t.link }}">View the slides</a></p>{% endif %}
+      <div class="btns">{% if t.link %}<a class="btn" href="{{ t.link }}">{{ t.link_label | default: "View the slides" }}</a>{% endif %}{% if t.link2 %}<a class="btn" href="{{ t.link2 }}">{{ t.link2_label }}</a>{% endif %}</div>
     </article>
     {% endfor %}
   </section>

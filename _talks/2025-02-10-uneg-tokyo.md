@@ -6,10 +6,13 @@ permalink: /talks/uneg-2025
 venue: "United Nations Evaluation Group"
 date: 2025-02-10
 year: 2025
-when: "February 2025"
+when: "12 February 2025"
 location: "Tokyo, Japan"
 hide_date: true
 link: "https://unegslideshow.my.canva.site/"
+link_label: "Event slides (Canva)"
+link2: "https://www.mentimeter.com/app/presentation/alzwwq49muyw6nwm9a9vrxp46vis7rfu"
+link2_label: "My interactive slides (Mentimeter)"
 ---
 
 Presented, with colleagues from the GCF Independent Evaluation Unit, on the IEU's experience with AI in evaluation:
