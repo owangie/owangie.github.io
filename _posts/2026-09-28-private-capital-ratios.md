@@ -22,7 +22,13 @@ The World Bank Group makes the same distinction on its [Scorecard](https://score
 
 A dollar of grant and a dollar of loan are not the same dollar. The loan comes back; the grant does not. Comparing them at face value flatters whichever portfolio lends more.
 
-Two habits help. First, break co-financing down by instrument (grant, senior loan, subordinated loan, equity, guarantee) and by public or private source, because the same headline ratio can hide very different risk sharing. Second, where the question is about subsidy, value everything in grant equivalent terms, which counts only the concessional part of a loan. I built [a chart on that basis](/#visuals): the private sector share of a climate fund's portfolio, with every loan valued at its grant equivalent.
+Two habits help. First, break co-financing down by instrument (grant, senior loan, subordinated loan, equity, guarantee) and by public or private source, because the same headline ratio can hide very different risk sharing. Second, where the question is about subsidy, value everything in grant equivalent terms, which counts only the concessional part of a loan. For a loan of face value F with principal repayments P and interest payments I in each year t, discounted at rate d:
+
+$$\text{Grant element} = \frac{F - \sum_{t=1}^{T} \dfrac{P_t + I_t}{(1+d)^t}}{F}$$
+
+A grant scores 100%. A loan at the discount rate scores zero. Everything concessional sits in between:
+
+<figure style="margin:20px 0"><img src="/images/grant-element-curve.png" alt="Line chart: grant element of a loan falls from about 62 percent at zero interest to zero at a 5 percent interest rate" loading="lazy" style="width:100%"><figcaption style="font-size:13px;color:var(--muted);font-style:italic">Worked example with a hypothetical loan (30 years, 10 years' grace, 5% discount rate). Not GCF data.</figcaption></figure> I built [a chart on that basis](/#visuals): the private sector share of a climate fund's portfolio, with every loan valued at its grant equivalent.
 
 ## 3. Control for size and timing before comparing models
 
@@ -30,7 +36,11 @@ The first comparison is always descriptive: group A has a higher ratio than grou
 
 Business models are not assigned at random. One access modality may take on bigger deals, another may be newer and have had less time to disburse. So I fit regressions that include deal size and approval year alongside the model variables:
 
-- **OLS on the log of the co-financing ratio**, because ratios are skewed and a log makes a doubling mean the same thing at every scale;
+- **OLS on the log of the co-financing ratio**, because ratios are skewed and a log makes a doubling mean the same thing at every scale:
+
+  $$\log(\text{CF}_i) = \alpha + \beta\,\text{Model}_i + \gamma \log(\text{Size}_i) + \delta_{\text{year}(i)} + \varepsilon_i$$
+
+  where β is the difference a business model makes once deal size and approval year are held fixed;
 - **a logit** for yes or no outcomes, such as whether a project ever needed a formal change request;
 - **OLS on the disbursement rate**, and in a separate study on the gap between disbursement and project maturity, with the financial instrument, the number and type of executing entities, and country vulnerability (least developed countries, small island states, region) as explanatory variables;
 - **heteroskedasticity robust standard errors (HC3)** throughout, because the variance of a small project's outcome is nothing like a large one's.

@@ -21,7 +21,13 @@ From the Secretariat's project data I took every approved project and counted th
 - its **time zone distance** from Korea (UTC offset relative to Korea Standard Time, UTC+9),
 - its **number of projects** and **total financing**.
 
-I computed Pearson correlations for every pair, and for the English variable, which is binary, a Welch t-test comparing the average approval time of the two groups.
+I computed Pearson correlations for every pair:
+
+$$r = \frac{\sum_i (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_i (x_i - \bar{x})^2 \; \sum_i (y_i - \bar{y})^2}}$$
+
+and for the English variable, which is binary, a Welch t-test comparing the average approval time of the two groups, which does not assume they have the same variance:
+
+$$t = \frac{\bar{y}_{\text{English}} - \bar{y}_{\text{other}}}{\sqrt{s^2_{\text{English}} / n_{\text{English}} + s^2_{\text{other}} / n_{\text{other}}}}$$
 
 ## What came out
 
@@ -35,6 +41,8 @@ I computed Pearson correlations for every pair, and for the English variable, wh
 |---|---|---|---|
 | Time zone distance vs. days to approval | –0.05 | 0.60 | |
 | English official language vs. days to approval | –0.25 | 0.005 | t = –3.02 |
+
+<figure style="margin:20px 0"><img src="/images/language-correlations.png" alt="Lollipop chart of six correlations; only English official language versus days to approval, r = -0.25, is significant" loading="lazy" style="width:100%"><figcaption style="font-size:13px;color:var(--muted);font-style:italic">All six published correlations. Only one clears the bar.</figcaption></figure>
 
 A correlation of –0.25 is modest. But it is statistically robust, and the t-test tells the same story.
 

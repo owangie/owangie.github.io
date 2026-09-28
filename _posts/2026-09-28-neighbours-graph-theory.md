@@ -24,15 +24,29 @@ A project covers a set of countries, call it **S**. The question becomes: how ar
 
 **Within two steps.** If S is not one connected block, the code checks something looser. For every country u in S, it collects the countries one step away (its neighbours) and two steps away (its neighbours' neighbours). If at least one other country of S sits in that circle, u passes. If every country passes, the project is *WeakRegional*. Kenya and Rwanda do not share a border, but Uganda sits between them, so they are two steps apart.
 
-Formally: S is WeakRegional when for every u in S there is some v in S, v ≠ u, with **d(u, v) ≤ 2**, where d is the number of borders you cross on the shortest route in G.
+Formally, with $$d_G(u,v)$$ the number of borders crossed on the shortest route in G:
+
+$$\text{StrongRegional}(S) \iff G[S] \text{ is connected}$$
+
+$$\text{WeakRegional}(S) \iff \forall\, u \in S \;\; \exists\, v \in S \setminus \{u\} : \; d_G(u,v) \le 2$$
 
 **Everything else** is *MultiRegional*.
+
+<figure style="margin:20px 0"><img src="/images/neighbours-three-cases.png" alt="Three network diagrams: Kenya, Tanzania and Uganda as one connected block; Kenya and Rwanda linked through Uganda; and two separate pairs, Kenya with Uganda and Brazil with Argentina" loading="lazy" style="width:100%"><figcaption style="font-size:13px;color:var(--muted);font-style:italic">The three cases on the real border graph. Navy: the project's countries. Gold: borders between them.</figcaption></figure>
 
 ## What the computer actually does
 
 The graph lives in [networkx](https://networkx.org/), the standard Python library for networks. The connected block test calls `nx.is_connected`, which runs a **breadth-first search**: start at any country, visit all its neighbours, then all of theirs, level by level, and count what you reached. If the count equals the size of S, the set is connected. The work grows with the number of countries plus borders, so it is instant even for large projects.
 
-The two-step test is plain set arithmetic. For each country, take the union of its neighbours and its neighbours' neighbours, then intersect that with the rest of S. An empty intersection means that country is isolated from the others.
+The two-step test is plain set arithmetic. For each country u, build its two-step neighbourhood
+
+$$N_2(u) = N(u) \;\cup \bigcup_{w \in N(u)} N(w)$$
+
+where N(u) is the set of u's neighbours, then intersect it with the rest of the project:
+
+$$N_2(u) \,\cap\, (S \setminus \{u\}) = \varnothing \;\Rightarrow\; u \text{ is isolated}$$
+
+Breadth-first search costs $$O(|V| + |E|)$$: every country and every border is looked at once.
 
 The interactive graph is drawn with [pyvis](https://pyvis.readthedocs.io/), a Python wrapper around the vis-network JavaScript library. Its layout is a physics simulation: edges pull connected countries together like springs, and all nodes push each other apart, until the picture settles. That is why neighbouring regions end up clustered.
 

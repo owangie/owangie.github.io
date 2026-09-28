@@ -42,7 +42,7 @@
     }
     nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 16px; }
     nav .name { font-weight: 600; text-decoration: none; font-size: 15px; white-space: nowrap; }
-    nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 14px; }
+    nav ul { display: flex; align-items: center; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 14px; }
     nav ul a { text-decoration: none; color: var(--muted); transition: color .2s; }
     nav ul a:hover { color: var(--text); }
     @media (max-width: 620px) { nav ul { gap: 14px; } nav ul li.opt { display: none; } }
@@ -247,7 +247,19 @@
     details.toolkit > summary::-webkit-details-marker { display: none; }
     details.toolkit[open] > summary { background: var(--accent-soft); }
     details.toolkit .reveal { opacity: 1; transform: none; }
+
+    /* manual theme switch: wins over the system setting */
+    :root[data-theme="light"] { --bg: #ffffff; --surface: #ffffff; --text: #1b1b1b; --muted: #6b6b6b; --line: #e6e3de; --band: #faf8f4;
+      --accent: #1f3a5f; --accent-soft: #eef2f7; --gold: #b08d57; color-scheme: light; }
+    :root[data-theme="dark"] { --bg: #111214; --surface: #17181b; --text: #ecebe8; --muted: #a3a09a; --line: #2b2b2e; --band: #17181b;
+      --accent: #a9c0de; --accent-soft: #1b2230; --gold: #c9a56b; color-scheme: dark; }
+    .theme-toggle { background: none; border: 1px solid var(--line); color: var(--text); cursor: pointer; font-family: Inter, system-ui, sans-serif;
+      font-size: 11px; letter-spacing: .12em; text-transform: uppercase; padding: 5px 10px; }
+    .theme-toggle:hover { border-color: var(--gold); color: var(--gold); }
   </style>
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
 </head>
 <body>
 
@@ -260,6 +272,7 @@
       <li><a href="#visuals">Collection</a></li>
       <li class="opt"><a href="#writing">Blog</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><button class="theme-toggle" type="button" aria-label="Switch between light and dark mode">Dark</button></li>
     </ul>
   </div>
 </nav>
@@ -535,6 +548,25 @@
       entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
     }, { threshold: 0.08 });
     els.forEach(function (e) { io.observe(e); });
+  })();
+</script>
+<script>
+  (function () {
+    var btn = document.querySelector('.theme-toggle');
+    if (!btn) return;
+    function current() {
+      var t = document.documentElement.getAttribute('data-theme');
+      if (t) return t;
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    function label() { btn.textContent = current() === 'dark' ? 'Light' : 'Dark'; }
+    label();
+    btn.addEventListener('click', function () {
+      var next = current() === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      label();
+    });
   })();
 </script>
 </body>

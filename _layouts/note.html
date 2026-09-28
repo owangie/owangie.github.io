@@ -66,10 +66,28 @@
     article pre { border-radius: 0; }
     .flow div { border-radius: 0; }
     article table, .flow b { font-family: Inter, system-ui, sans-serif; }
+
+    /* manual theme switch: wins over the system setting */
+    :root[data-theme="light"] { --bg: #ffffff; --surface: #ffffff; --text: #1b1b1b; --muted: #6b6b6b; --line: #e6e3de; --band: #faf8f4;
+      --accent: #1f3a5f; --accent-soft: #eef2f7; --gold: #b08d57; color-scheme: light; }
+    :root[data-theme="dark"] { --bg: #111214; --surface: #17181b; --text: #ecebe8; --muted: #a3a09a; --line: #2b2b2e; --band: #17181b;
+      --accent: #a9c0de; --accent-soft: #1b2230; --gold: #c9a56b; color-scheme: dark; }
+    .theme-toggle { background: none; border: 1px solid var(--line); color: var(--text); cursor: pointer; font-family: Inter, system-ui, sans-serif;
+      font-size: 11px; letter-spacing: .12em; text-transform: uppercase; padding: 5px 10px; }
+    .theme-toggle:hover { border-color: var(--gold); color: var(--gold); }
+    .katex-display { overflow-x: auto; overflow-y: hidden; padding: 4px 0; }
+    article figure img { background: #fff; }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
 </head>
 <body>
-<nav><div class="wrap"><a href="{{ site.baseurl }}/">{{ site.author.name }}</a><a class="back" href="{{ site.baseurl }}/#writing">All posts</a></div></nav>
+<nav><div class="wrap"><a href="{{ site.baseurl }}/">{{ site.author.name }}</a><span style="display:flex;gap:14px;align-items:center"><a class="back" href="{{ site.baseurl }}/#writing">All posts</a><button class="theme-toggle" type="button" aria-label="Switch between light and dark mode">Dark</button></span></div></nav>
 <main class="wrap">
   <header>
     <p class="label">Blog</p>
@@ -79,5 +97,24 @@
   <article>{{ content }}</article>
 </main>
 <footer><div class="wrap"><a href="{{ site.baseurl }}/">Back to home</a> · <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}/">LinkedIn</a></div></footer>
+<script>
+  (function () {
+    var btn = document.querySelector('.theme-toggle');
+    if (!btn) return;
+    function current() {
+      var t = document.documentElement.getAttribute('data-theme');
+      if (t) return t;
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    function label() { btn.textContent = current() === 'dark' ? 'Light' : 'Dark'; }
+    label();
+    btn.addEventListener('click', function () {
+      var next = current() === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      label();
+    });
+  })();
+</script>
 </body>
 </html>
