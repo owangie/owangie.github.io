@@ -64,7 +64,7 @@ and
 
 The paper weighed the two together. It concluded there was not yet broad evidence that accepting proposals in other languages would by itself widen access, and focused its approach on language skills: hiring and training so that regional teams and headquarters can work with countries in their own languages.
 
-That is what I hoped for from a small piece of analysis. It did not settle the question, and it was never going to. It gave a policy discussion a number to argue with instead of an impression, and it showed which part of the problem, speed rather than access, the evidence actually points to.
+That is what a small piece of analysis can do. It did not settle the question, and it was never going to. It gave a policy discussion a number to argue with instead of an impression, and it showed which part of the problem, speed rather than access, the evidence actually points to.
 
 ## Sources
 
