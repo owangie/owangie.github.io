@@ -25,7 +25,9 @@ At 19 I added a third, Python, with *Python Crash Course*, my first programming 
 
 Between sessions, the officials talked about what held them back at home: hygiene and sanitation, the weather, infrastructure. That was when I understood that knowledge only travels if it fits the place it lands in.
 
-**Then technology.** A summer at Amazon Web Services in Hong Kong, where I still remember the engineer on the team who was fine-tuning Alexa.
+**Then technology.** Amazon Web Services in Hong Kong was my first look at the business side of tech. I worked alongside the sales, marketing and policy teams, and next to the developer who was fine-tuning Alexa's speech. I saw how a technical product only matters once someone can explain what it does for the customer.
+
+Amazon's culture, from the interview loop onwards, shaped how I work: be direct, stay focused on solutions, and when you raise a problem, bring a way to fix it. I still work that way.
 
 **Then the numbers got serious**, during a Master of Public Policy in development economics at the University of Maryland. For my research paper, with the World Resources Institute in Washington, DC, and the UN Foundation, I mapped how many weather and climate stations the least developed countries actually have, using NOAA's global station data, and asked what explains the gaps. My advisor was [Professor Anand Patwardhan](https://scholar.google.com/citations?user=t7DtrlwAAAAJ).
 
