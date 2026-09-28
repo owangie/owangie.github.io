@@ -9,7 +9,7 @@
   <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #fafaf9; --surface: #ffffff; --text: #18181b; --muted: #6b6b73;
@@ -53,6 +53,19 @@
     .flow b { display: block; font-size: 13px; }
     .flow span { display: block; font-size: 12px; color: var(--muted); line-height: 1.4; }
     footer { border-top: 1px solid var(--line); padding: 28px 0 48px; font-size: 14px; color: var(--muted); }
+
+    :root { --bg: #ffffff; --surface: #faf8f4; --text: #1b1b1b; --muted: #6b6b6b; --line: #e6e3de; --accent: #1f3a5f; --accent-soft: #eef2f7; --gold: #b08d57; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #111214; --surface: #17181b; --text: #ecebe8; --muted: #a3a09a; --line: #2b2b2e; --accent: #a9c0de; --accent-soft: #1b2230; --gold: #c9a56b; } }
+    body { font-family: "Source Serif 4", Georgia, serif; font-size: 18px; line-height: 1.75; }
+    h1, h2, h3, nav a { font-family: "Libre Caslon Text", Georgia, serif; font-weight: 400; letter-spacing: 0; }
+    h1 { font-size: clamp(30px, 5vw, 42px); }
+    h1::after { content: ""; display: block; width: 56px; height: 2px; background: var(--gold); margin-top: 18px; }
+    article h2 { font-size: 24px; font-weight: 400; }
+    article h3 { font-size: 19px; font-weight: 400; }
+    .label, .meta, nav a.back, footer { font-family: Inter, system-ui, sans-serif; text-transform: uppercase; letter-spacing: .12em; font-size: 11px; }
+    article pre { border-radius: 0; }
+    .flow div { border-radius: 0; }
+    article table, .flow b { font-family: Inter, system-ui, sans-serif; }
   </style>
 </head>
 <body>
