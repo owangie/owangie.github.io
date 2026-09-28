@@ -352,6 +352,7 @@
       <details class="code">
         <summary>Show the algorithm (Python, networkx)</summary>
         <pre><code>{{ v.code | xml_escape }}</code></pre>
+        {% if v.repo %}<p class="credit"><a href="{{ v.repo }}">Full code, border data and tests on GitHub</a></p>{% endif %}
       </details>
       {% endif %}
     </figure>

@@ -1,4 +1,7 @@
 # Repositories shown in the Code section of the home page (github.com/awongonki).
+- name: "country_network_html"
+  desc: "Classifies multi-country projects by how connected their countries are, using a border graph, breadth-first search and two-step neighbourhoods."
+  lang: "Python, networkx"
 - name: "GCF-Finance"
   desc: "Exploratory analysis and forecasting of fund growth using Green Climate Fund portfolio data, 2015 to 2023."
   lang: "Jupyter Notebook"

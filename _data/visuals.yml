@@ -8,6 +8,7 @@
   title: "Do neighbours slow each other down?"
   caption: "I wondered whether projects spanning several countries, especially countries that share a border, move money more slowly. Political tension between neighbours could hold up approvals, transfers or spending. A colleague's algorithm measures how connected a project's countries are, and I plotted disbursement against maturity in four groups: single country, weak regional, strong regional and multi-regional. More of the strong regional projects, the blue dots, sit below the line than above it. It is a hypothesis, not a verdict. What would you expect: do neighbours cooperate more easily, or clash more often?"
   graph: "/assets/graphs/border-graph.html"
+  repo: "https://github.com/awongonki/country_network_html"
   graph_caption: "The neighbour graph behind the classification: 243 countries and territories as nodes, 588 shared borders as edges. Click a country to highlight its neighbours and their neighbours."
   method: "Each country is a node in a graph G, with an edge between neighbours. A project's countries are StrongRegional if they form one connected subgraph of G, WeakRegional if every country is within two steps of another, and MultiRegional otherwise. Built with networkx. <a href=\"/writing/neighbours-graph-theory/\">How it works, explained step by step</a>."
   code: |
