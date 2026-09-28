@@ -189,7 +189,7 @@
   <header class="hero reveal">
     <div class="hero-text">
     <h1>{{ site.author.name }}</h1>
-    <p>I work on one question: did the money do what it was meant to? I answer it with data and AI: language models that read thousands of project documents, portfolio analysis, and charts that decision makers can use.</p>
+    <p>I evaluate development and climate projects, mostly with code. I use language models to read project documents at scale, analyse portfolio data, and make charts for the people deciding where the money goes next.</p>
     <div class="btns">
       <a class="btn primary" href="#projects">See projects</a>
       <a class="btn" href="https://www.linkedin.com/in/{{ site.author.linkedin }}/">LinkedIn</a>
@@ -227,7 +227,7 @@
     <h2 class="reveal">How I use AI and language models</h2>
     </div>
     <div class="sbody">
-    <p class="intro reveal">Most of my AI work applies language models to documents people would otherwise read one by one: project proposals, evaluation reports and survey responses. Below is the workflow, the data and models, the tools I actually use most, and what I have learned. <a href="{{ site.baseurl }}/writing/llm-screening-private-sector/">Read a worked example on the blog.</a></p>
+    <p class="intro reveal">Most of my AI work is getting language models to read documents that people would otherwise read one by one: project proposals, evaluation reports, survey answers. This is how I set it up, what I use, and what went wrong often enough to become a rule. There is a <a href="{{ site.baseurl }}/writing/llm-screening-private-sector/">worked example on the blog</a>.</p>
     <ol class="flow reveal">
       {% for s in site.data.ai.pipeline %}<li><b>{{ s.step }}</b><span>{{ s.text }}</span></li>{% endfor %}
     </ol>
@@ -285,7 +285,7 @@
     <h2 class="reveal">Questions, answered with charts</h2>
     </div>
     <div class="sbody">
-    <p class="intro reveal">Each chart starts from a question a decision maker would ask. I designed and built them in Flourish; hover or tap for details.</p>
+    <p class="intro reveal">Each chart starts from a question someone deciding on funding would ask. I designed and built them in Flourish. Hover or tap for the numbers.</p>
     <div class="vizgrid">
     {% for v in site.data.visuals %}
     <figure class="viz reveal{% if v.size == 'half' %} half{% endif %}">

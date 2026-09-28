@@ -7,8 +7,8 @@ redirect_from:
   - /about.html
 ---
 
-I work at the point where data meets development operations. At the Green Climate Fund's Independent Evaluation Unit I analyse portfolio data for independent evaluations and serve as the unit's focal point for AI.
+I'm an evaluation associate at the Green Climate Fund's Independent Evaluation Unit in Incheon, Korea. My work is mostly building datasets from project portfolios, writing Python that gets language models to read project documents, and turning the results into charts for evaluation reports. I'm also the person in the unit people come to about AI.
 
-Before that I spent four years as a Data Scientist at UNDP in New York, building dashboards for country offices and automating the analysis of evaluation reports. I also worked with the World Food Programme and the UN Capital Development Fund.
+Before that I spent four years at UNDP in New York as a data scientist. I built the Power BI dashboards country offices used to follow programme results, and wrote the code that sorted and summarised evaluation reports, more than 15,000 of them by the end. I also worked at the World Food Programme and the UN Capital Development Fund.
 
-I started in foreign affairs, not data. I studied Portuguese and foreign affairs in Beijing and helped run training programmes for officials from Least Developed Countries at China's Ministry of Commerce. A Master of Public Policy at the University of Maryland, focused on development economics, moved me toward quantitative work.
+I didn't start in data. I studied Portuguese and foreign affairs in Beijing, then helped run training courses at China's Ministry of Commerce for government officials from the least developed countries. The numbers came later, during a Master of Public Policy in development economics at the University of Maryland.

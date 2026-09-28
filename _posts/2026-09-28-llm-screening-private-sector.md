@@ -47,10 +47,9 @@ We used **static** few-shot prompting: a fixed, hand-picked set of examples per 
   <div><b>Human review</b><span>quote checked against source</span></div>
 </div>
 
-* **Extraction.** Text is pulled once per proposal and cached, so reruns do not repeat it.
-* **Section targeting.** Each criterion only sees the sections that matter to it (for example financing structure for risk profile), plus a short summary. Less text means lower cost and less room for the model to be distracted.
-* **Model.** GPT-5.4 mini ([OpenAI](https://openai.com/index/introducing-gpt-5-4-mini-and-nano/)) through the organisation's own Azure AI Foundry deployment, so no proposal text leaves its cloud environment.
-* **Rule checks.** Anything that must never happen is enforced in code, not left to the prompt.
+Text is extracted once per proposal and cached, so reruns skip that step. Each criterion then sees only the sections that matter to it (the financing structure, for the risk profile question) plus a short summary. Less text is cheaper, and it gives the model less to get distracted by.
+
+The model is GPT-5.4 mini ([OpenAI](https://openai.com/index/introducing-gpt-5-4-mini-and-nano/)), called through the organisation's own Azure AI Foundry deployment so proposal text never leaves its cloud. Anything that must never happen is checked in code after the model answers.
 
 ## Implementation
 
