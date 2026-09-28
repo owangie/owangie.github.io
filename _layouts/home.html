@@ -142,10 +142,11 @@
     section .sbody > .intro:first-child { margin-top: 2px; }
     section:nth-of-type(even) { background: var(--band); box-shadow: 0 0 0 100vmax var(--band); clip-path: inset(0 -100vmax); }
     @media (max-width: 820px) { section { grid-template-columns: 1fr; padding: 48px 0; } section .shead h2 { font-size: 24px; } }
-    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+    .facts { display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 24px; }
     .facts h3 { font-size: 15px; font-weight: 600; margin: 0 0 8px; }
     .facts ul { margin: 0; padding-left: 18px; font-size: 14px; }
     .facts li { margin-bottom: 6px; }
+    .facts small.cw { font-style: italic; margin-top: 4px; line-height: 1.5; }
     .facts small { display: block; color: var(--muted); font-size: 12px; }
     @media (max-width: 560px) { .facts { grid-template-columns: 1fr; } }
     .chip { display: inline-block; font-size: 11px; color: var(--accent); border: 1px solid var(--accent); border-radius: 5px; padding: 0 6px; margin: 6px 6px 0 0; text-decoration: none; }
@@ -268,7 +269,9 @@
     <div class="prose">{{ content }}</div>
       <div class="facts">
         <div><h3>Education</h3><ul>
-          <li>Master of Public Policy, 2019<small>University of Maryland</small></li>
+          <li>Master of Public Policy, 2019<small>University of Maryland, School of Public Policy. Concentration in development economics.</small>
+            <small class="cw">Coursework: Introduction to Machine Learning; Questionnaire Design; Quantitative Aspects of Public Policy; Microeconomics and Policy Analysis; International Development Economics; Qualitative Methods for Evidence-Based Policy.</small>
+            <small class="cw">Thesis with the World Resources Institute: determinants of climate information availability in the least developed countries, using Global Historical Climatology Network data.</small></li>
           <li>B.A. Portuguese Studies and Foreign Affairs, 2017<small>Beijing Foreign Studies University</small></li>
         </ul></div>
       </div>
