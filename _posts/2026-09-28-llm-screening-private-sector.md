@@ -1,4 +1,5 @@
 ---
+featured: true
 layout: note
 title: "Can a language model tell whether a climate project really involves the private sector?"
 date: 2026-09-28

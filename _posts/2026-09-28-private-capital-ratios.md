@@ -1,4 +1,5 @@
 ---
+featured: true
 layout: note
 title: "Before you trust a co-financing ratio"
 date: 2026-09-28

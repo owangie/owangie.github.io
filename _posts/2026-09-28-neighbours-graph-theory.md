@@ -1,4 +1,5 @@
 ---
+featured: true
 layout: note
 title: "Are a project's countries neighbours? A short lesson in graph theory"
 date: 2026-09-28

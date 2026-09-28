@@ -1,4 +1,5 @@
 ---
+featured: true
 layout: note
 title: "Does speaking English get your climate project approved faster?"
 date: 2025-10-30

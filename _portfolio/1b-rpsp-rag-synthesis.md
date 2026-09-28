@@ -1,4 +1,5 @@
 ---
+featured: true
 title: "A RAG pipeline for 1,900 pages of past evaluations"
 excerpt: "Retrieval-augmented generation that synthesises 34 prior evaluations and policy documents for the Readiness Programme evaluation, with every claim cited to a document and page."
 collection: portfolio

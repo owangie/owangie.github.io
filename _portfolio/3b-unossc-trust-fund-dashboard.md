@@ -1,4 +1,5 @@
 ---
+featured: true
 title: "UNOSSC's first trust fund dashboard"
 excerpt: "In 2024 there was no dashboard for the Office's South-South trust funds. I built one from scratch in Power BI, with KPIs for each fund."
 collection: portfolio

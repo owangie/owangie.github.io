@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow, noarchive">
-  <title>{{ site.author.name }}</title>
+  <title>{% if page.view and page.view != "home" %}{{ page.title }} · {% endif %}{{ site.author.name }}</title>
   <meta name="description" content="{{ site.description }}">
   <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -109,6 +109,13 @@
     .repo svg { flex: none; fill: var(--muted); }
     .repo .lang { font-size: 12px; color: var(--muted); }
     .codegroup { margin-bottom: 8px; }
+    .more { font-family: var(--sans); font-size: 14px; margin: 20px 0 0; }
+    .more a { color: var(--accent); text-decoration: none; }
+    .more a:hover { text-decoration: underline; }
+    .subhead { padding: 56px 0 8px; }
+    .subhead .eyebrow a { color: var(--muted); text-decoration: none; font-family: var(--sans); font-size: 13px; }
+    .subhead h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(30px, 5vw, 44px); margin: 8px 0 12px; }
+    .subhead p { color: var(--muted); font-style: italic; max-width: 640px; }
     .coderow { padding: 14px 0; border-top: 1px solid var(--line); }
     .coderow p { margin: 0 0 6px; }
     .codename { font-family: var(--sans); font-weight: 600; }
@@ -270,16 +277,17 @@
   </script>
 </head>
 <body>
+{% assign view = page.view | default: "home" %}{% if view == "home" %}{% assign home = true %}{% else %}{% assign home = false %}{% endif %}
 
 <nav>
   <div class="wrap">
-    <a class="name" href="#top">{{ site.author.name }}</a>
+    <a class="name" href="{{ site.baseurl }}/">{{ site.author.name }}</a>
     <ul>
-      <li class="opt"><a href="#about">About</a></li>
-      <li><a href="#ai">Method</a></li>
-      <li><a href="#visuals">Collection</a></li>
-      <li class="opt"><a href="#writing">Blog</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li class="opt"><a href="{{ site.baseurl }}/#about">About</a></li>
+      <li><a href="{{ site.baseurl }}/work/">Work</a></li>
+      <li><a href="{{ site.baseurl }}/blog/">Blog</a></li>
+      <li class="opt"><a href="{{ site.baseurl }}/code/">Code</a></li>
+      <li><a href="{{ site.baseurl }}/#contact">Contact</a></li>
       <li><button class="theme-toggle" type="button" aria-label="Switch between light and dark mode">Dark</button></li>
     </ul>
   </div>
@@ -287,6 +295,7 @@
 
 <main class="wrap" id="top">
 
+  {% if home %}
   <header class="hero reveal">
     <div class="hero-text">
     <p class="eyebrow">Data scientist · Evaluation and AI</p>
@@ -300,7 +309,15 @@
     </div>
     <img class="hero-photo" src="{{ site.baseurl }}/images/profile.jpg?v=2" alt="{{ site.author.name }}" width="608" height="760">
   </header>
+  {% else %}
+  <header class="subhead reveal">
+    <p class="eyebrow"><a href="{{ site.baseurl }}/">← Home</a></p>
+    <h1>{{ page.title }}</h1>
+    {% if page.intro %}<p>{{ page.intro }}</p>{% endif %}
+  </header>
+  {% endif %}
 
+  {% if home %}
   <section id="about" class="reveal">
     <div class="shead">
     <p class="label">About</p>
@@ -320,7 +337,9 @@
       </div>
       </div>
   </section>
+  {% endif %}
 
+  {% if view == "work" %}
   <section id="ai">
     <div class="shead">
     <p class="label reveal">AI in my work</p>
@@ -361,16 +380,18 @@
       </details>
     </div>
   </section>
+  {% endif %}
 
+  {% if home or view == "work" %}
   <section id="visuals">
     <div class="shead">
     <p class="label reveal">Visualisations</p>
     <h2 class="reveal">The collection</h2>
     </div>
     <div class="sbody">
-    <p class="intro reveal">Seven questions a funder might ask, each answered with a chart I designed and built in Flourish, and each ending with a question back to you. Hover or tap for the numbers.</p>
+    <p class="intro reveal">{% if home %}Four questions a funder might ask{% else %}Seven questions a funder might ask{% endif %}, each answered with a chart I designed and built in Flourish, and each ending with a question back to you. Hover or tap for the numbers.</p>
     <div class="vizgrid">
-    {% for v in site.data.visuals %}
+    {% for v in site.data.visuals %}{% if home and v.featured != true %}{% continue %}{% endif %}
     <figure class="viz reveal{% if v.size == 'half' %} half{% endif %}">
       <h3>{{ v.title }}</h3>
       <p>{{ v.caption }}</p>
@@ -393,27 +414,33 @@
     </figure>
     {% endfor %}
     </div>
+    {% if home %}<p class="more reveal"><a href="{{ site.baseurl }}/work/#visuals">All seven charts →</a></p>{% endif %}
       </div>
   </section>
+  {% endif %}
 
+  {% if home or view == "work" %}
   <section id="projects">
     <div class="shead">
     <p class="label reveal">Projects</p>
     <h2 class="reveal">Things I've built</h2>
     </div>
     <div class="sbody">
-    <p class="intro reveal">Tools made for the people who open them every week.</p>
+    {% if home %}<p class="intro reveal">Tools made for the people who open them every week. Most of the evidence I work with sits in documents, so I use language models to read it, with a person checking every piece that matters (<a href="{{ site.baseurl }}/work/#ai">how I work</a>).</p>{% else %}<p class="intro reveal">Tools made for the people who open them every week.</p>{% endif %}
     <div class="grid">
-      {% for p in site.portfolio %}
+      {% for p in site.portfolio %}{% if home and p.featured != true %}{% continue %}{% endif %}
       <article class="card reveal">
         <h3>{{ p.title }}</h3>
         {{ p.content | markdownify }}
       </article>
       {% endfor %}
     </div>
+    {% if home %}<p class="more reveal"><a href="{{ site.baseurl }}/work/#projects">All projects →</a> &nbsp; <a href="{{ site.baseurl }}/code/">Code and data →</a></p>{% endif %}
       </div>
   </section>
+  {% endif %}
 
+  {% if view == "code" %}
   <section id="code">
     <div class="shead">
     <p class="label reveal">Code</p>
@@ -436,7 +463,9 @@
     {% endfor %}
       </div>
   </section>
+  {% endif %}
 
+  {% if home %}
   <section id="publications">
     <div class="shead">
     <p class="label reveal">Publications</p>
@@ -459,7 +488,9 @@
     </ul>
       </div>
   </section>
+  {% endif %}
 
+  {% if home or view == "blog" %}
   <section id="writing">
     <div class="shead">
     <p class="label reveal">Blog</p>
@@ -468,7 +499,7 @@
     <div class="sbody">
     <p class="intro reveal">Field notes on language models, official statistics and the slow craft of building evidence.</p>
     <ul class="list reveal">
-      {% for post in site.posts %}
+      {% for post in site.posts %}{% if home and post.featured != true %}{% continue %}{% endif %}
       <li>
         <span class="yr">{{ post.date | date: "%Y" }}</span>
         <span>
@@ -478,9 +509,12 @@
       </li>
       {% endfor %}
     </ul>
+    {% if home %}<p class="more reveal"><a href="{{ site.baseurl }}/blog/">All posts and talks →</a></p>{% endif %}
       </div>
   </section>
+  {% endif %}
 
+  {% if view == "blog" %}
   <section id="engagement">
     <div class="shead">
     <p class="label reveal">Engagement</p>
@@ -498,7 +532,9 @@
     {% endfor %}
       </div>
   </section>
+  {% endif %}
 
+  {% if view == "reading" %}
   <section id="reading">
     <div class="shead">
     <p class="label reveal">Reading</p>
@@ -531,6 +567,35 @@
     </ul>
       </div>
   </section>
+  {% endif %}
+
+  {% if home %}
+  <section id="elsewhere" class="reveal">
+    <div class="shead">
+    <p class="label">Elsewhere</p>
+    <h2>Talks and reading</h2>
+    </div>
+    <div class="sbody">
+    <ul class="list">
+      {% for t in site.talks reversed %}
+      <li>
+        <span class="yr">{{ t.year }}</span>
+        <span>
+          <a class="t" href="{{ t.link }}">{{ t.title }}</a>
+          <span class="sub">{{ t.venue }}{% if t.location %}, {{ t.location }}{% endif %}{% if t.when %}, {{ t.when }}{% endif %}. <a href="{{ site.baseurl }}/blog/#engagement">About the talk</a></span>
+        </span>
+      </li>
+      {% endfor %}
+      <li>
+        <span class="yr">Shelf</span>
+        <span>
+          <a class="t" href="{{ site.baseurl }}/reading/">On my shelf</a>
+          <span class="sub">{% for b in site.data.books %}<i>{{ b.title }}</i>{% unless forloop.last %}; {% endunless %}{% endfor %}. Plus the courses behind them.</span>
+        </span>
+      </li>
+    </ul>
+      </div>
+  </section>
 
   <section id="contact" class="reveal">
     <div class="shead">
@@ -545,6 +610,7 @@
     </div>
       </div>
   </section>
+  {% endif %}
 
 </main>
 
