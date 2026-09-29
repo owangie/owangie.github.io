@@ -9,6 +9,22 @@ excerpt: "The maths behind the neighbours chart: countries as a graph, a breadth
 
 In the [collection](/#visuals) there is a chart asking whether projects spanning neighbouring countries spend their money more slowly. To draw it, every multi-country project first had to be sorted by one question: *how close are its countries to each other?* This post explains how that sorting works. No maths background needed, but the maths is there if you want it.
 
+## Why neighbours might be slower, or faster
+
+There are two sound reasons to expect neighbours to move more slowly, and one to expect the opposite.
+
+**The weakest link.** A multi-country project needs every government to sign, approve budgets, issue no-objections and report. Economists call this a *weakest-link* technology: the result depends on the slowest contributor, not the average one ([Hirshleifer 1983](https://doi.org/10.1007/BF00141070)). Sandler shows that many regional public goods, such as disease surveillance or early warning, work this way ([Sandler 2006](https://doi.org/10.1007/s11558-006-6604-2)). If a project's pace is the minimum of its countries' paces,
+
+$$\text{pace}_{\text{project}} = \min_{c \in S} \; \text{pace}_c ,$$
+
+then adding countries can only keep it the same or slow it down.
+
+**Conflicting interests.** Neighbours share rivers, borders and markets, and so have more to disagree about. The World Bank's own evaluators found that regional programmes depend on strong ownership by *every* participating country, and that the Bank was less effective at helping countries deal with their conflicting interests than at getting them interested in the first place ([IEG 2007](https://openknowledge.worldbank.org/handle/10986/6673); see also [IEG 2019](https://ieg.worldbankgroup.org/evaluations/regional-integration) on regional integration).
+
+**Or neighbours cooperate.** Shared problems can also pull countries together. Across decades of events over shared rivers, cooperation between countries was far more common than conflict, and conflict was more likely where fast change outran the institutions meant to manage it ([Yoffe, Wolf and Giordano 2003](https://doi.org/10.1111/j.1752-1688.2003.tb03696.x)).
+
+So the theory gives competing predictions, and that is why the chart is a question, not a verdict. The graph below only sorts projects by how close their countries are. It cannot tell which mechanism is at work.
+
 ## Countries as a graph
 
 A graph, in the mathematical sense, is just dots and lines. Each dot (a *node*) is a country. Each line (an *edge*) joins two countries that are neighbours. Written formally, the graph is **G = (V, E)**, where V is the set of countries and E the set of neighbouring pairs.
