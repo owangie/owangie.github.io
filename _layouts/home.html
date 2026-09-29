@@ -389,7 +389,7 @@
     <h2 class="reveal">The collection</h2>
     </div>
     <div class="sbody">
-    <p class="intro reveal">{% if home %}Four questions a funder might ask{% else %}Seven questions a funder might ask{% endif %}, each answered with a chart I designed and built in Flourish, and each ending with a question back to you. Hover or tap for the numbers.</p>
+    <p class="intro reveal">{% if home %}Four questions a funder might ask{% else %}Seven questions a funder might ask{% endif %}. Each chart is my own work: I prepared the data, wrote the analysis code and designed the chart in Flourish. Where someone else contributed, the caption says so. Hover or tap for the numbers.</p>
     <div class="vizgrid">
     {% for v in site.data.visuals %}{% if home and v.featured != true %}{% continue %}{% endif %}
     <figure class="viz reveal{% if v.size == 'half' %} half{% endif %}">
