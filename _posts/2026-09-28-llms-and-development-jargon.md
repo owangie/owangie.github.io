@@ -28,6 +28,7 @@ Development work has its own dialect, and models trained on the whole internet d
 
 - **Pipeline.** To an engineer it is oil or gas. To a data scientist it is a chain of processing steps. To a climate fund it is the set of projects under preparation that have not yet been approved.
 - **Portfolio.** In finance it is a set of investments you hold. In our world it is the set of approved projects, and "portfolio performance" is about results and disbursement, not returns.
+- **NDA.** Almost everywhere else, and in most of what a model has read, this is a non-disclosure agreement. At the Green Climate Fund it is the National Designated Authority, the government body that links each country to the Fund and signs off on the projects proposed there. A sentence like "the NDA was not consulted" is about a missing government endorsement, not a missing legal contract, and a model without a glossary can easily read it the wrong way.
 - **Accredited entity, readiness, co-financing, paradigm shift.** Each has a precise meaning inside a climate fund that a general model will happily guess at.
 
 So before any prompt, I write a taxonomy: a short list of the terms that matter for the question, each with a plain definition and an example of how it appears in real documents. For one study we also built an entity ownership list, because whether an institution is public or private is rarely obvious from its name. The model gets those definitions with the prompt.

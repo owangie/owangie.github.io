@@ -32,7 +32,7 @@ tips:
   - title: "Find the right passage first"
     text: "Decide where in the document the answer lives before deciding what to ask. Most of a long report is noise for any one question."
   - title: "Teach it the jargon"
-    text: "Pipeline, portfolio and readiness mean something specific in development work. Write a short taxonomy with definitions and give it to the model."
+    text: "Pipeline, portfolio and readiness mean something specific in development work, and to a general model an NDA is a non-disclosure agreement, not a National Designated Authority. Write a short taxonomy with definitions and give it to the model."
   - title: "Write the rule before the prompt"
     text: "Agree the decision rule a human reviewer would apply, and write it down as a procedure. The prompt comes after."
   - title: "Budget for hidden reasoning"
