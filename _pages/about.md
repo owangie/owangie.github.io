@@ -21,4 +21,4 @@ I am an evaluation associate at the Independent Evaluation Unit of the Green Cli
 
 Before joining the Fund in 2024, I spent four years as a data scientist at UNDP in New York, and earlier worked at the World Food Programme, the UN Capital Development Fund, Amazon Web Services and China's Ministry of Commerce. I received a Master of Public Policy from the University of Maryland, where I studied impact evaluation with Professor Susan W. Parker and econometrics with Professor Alok Bhargava, and wrote my thesis with the World Resources Institute under Professor Anand Patwardhan. I hold a B.A. in Portuguese and Foreign Affairs from Beijing Foreign Studies University.
 
-Outside work, I help an auction house part time.
+I am fond of history and art, and have spent time helping at an auction house. Tracing an antique back to its age and maker is not so different from evaluating a project: you read the marks and the records, and tell only the story the evidence supports.
