@@ -17,12 +17,9 @@ redirect_from:
   <li><span>2024</span><b>Green Climate Fund</b><i>Independent Evaluation Unit</i></li>
 </ol>
 
-I didn't start in data. I started in languages: Portuguese and Estonian, in Beijing. At 19 I added a third, Python, with *Python Crash Course*. It's the one I ended up speaking every day (sorry, Estonian).
 
-**Development, then technology.** While still a student, I was hired as an assistant representative in China's foreign aid programme at the Ministry of Commerce, which works much like Japan's JICA or Korea's KOICA. I ran seminars there for officials from the least developed countries. In 2017 I spent a summer at Amazon Web Services in Hong Kong, my first time inside a technology company. Two of Amazon's [leadership principles](https://www.amazon.jobs/content/en/our-workplace/leadership-principles), *Invent and Simplify* and *Learn and Be Curious*, have shaped how I work since. So has one habit I learned there: when I raise a problem, I bring a way to fix it.
+I work where evaluation meets data science: finding out whether development projects achieve what they were expected to, and building tools that make the evidence faster to find.
 
-**Into the UN.** After a Master of Public Policy at the University of Maryland, I worked at the UN Capital Development Fund and the World Food Programme, then spent four years at UNDP as a data scientist, building the dashboards country offices used to follow results and mining more than 15,000 evaluation reports. In 2023 I also helped design UNDP's [Blockchain Academy](https://www.undp.org/news/undp-takes-its-blockchain-academy-global) with the Accelerator Labs and Algorand.
+At UNDP I spent four years as a data scientist, building the dashboards country offices used to follow results and mining more than 15,000 evaluation reports. At the Green Climate Fund's Independent Evaluation Unit, I now build tools that use language models to read project documents, and I prepare the data and charts for evaluation reports. The organisation elected me its AI champion.
 
-**Now.** I'm an evaluation associate at the Green Climate Fund's Independent Evaluation Unit in Korea. I build tools that use language models to read project documents, and I prepare the data and charts for evaluation reports. I also set up the unit's GitHub, and the organisation elected me its AI champion.
-
-**Outside work** I help an auction house part time. The job is the same as mine: every object has a story, and you build it from evidence until the history holds up.
+I started in languages, Portuguese and Estonian, before Python. From a summer at Amazon Web Services I kept one habit: when I raise a problem, I bring a way to fix it.
