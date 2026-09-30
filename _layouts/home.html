@@ -109,6 +109,8 @@
     .repo svg { flex: none; fill: var(--muted); }
     .repo .lang { font-size: 12px; color: var(--muted); }
     .codegroup { margin-bottom: 8px; }
+    .credit-line { font-size: 12px; margin: 8px 0 0; text-transform: none; letter-spacing: 0; }
+    .credit-line a { color: inherit; }
     .more { font-family: var(--sans); font-size: 14px; margin: 20px 0 0; }
     .more a { color: var(--accent); text-decoration: none; }
     .more a:hover { text-decoration: underline; }
@@ -300,7 +302,7 @@
     <div class="hero-text">
     <p class="eyebrow">Data scientist · Evaluation and AI</p>
     <h1>{{ site.author.name }}</h1>
-    <p>An auction house specialist traces an object's story from its marks and records. I do the same with development data: I find the patterns and the storyline in the numbers, catch the early signals, and make results measurable. For the text, I build large language model (LLM) pipelines that turn thousands of project documents into structured, citable evidence.</p>
+    <p>I find the patterns and the storyline in development data, catch the early signals, and make results measurable. For the text, I build large language model (LLM) pipelines that turn thousands of project documents into structured, citable evidence. The method is close to an auction house specialist's: trace the story from its marks and records, and claim only what the evidence supports.</p>
     <div class="btns">
       <a class="btn primary" href="#visuals">See the collection</a>
       <a class="btn" href="https://www.linkedin.com/in/{{ site.author.linkedin }}/">LinkedIn</a>
@@ -615,7 +617,7 @@
 </main>
 
 <footer>
-  <div class="wrap">{{ site.author.location }}</div>
+  <div class="wrap">{{ site.author.location }}<p class="credit-line">Designed and built by Onki Wong on the <a href="https://github.com/academicpages/academicpages.github.io">academicpages</a> template (MIT licence), itself based on <a href="https://mmistakes.github.io/minimal-mistakes/">Minimal Mistakes</a> by Michael Rose.</p></div>
 </footer>
 
 <script src="https://public.flourish.studio/resources/embed.js"></script>
