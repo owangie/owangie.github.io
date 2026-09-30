@@ -151,6 +151,9 @@ social:
   links: # An array of links to social media profiles
 
 
+# Visitor counting (GoatCounter, no cookies). Set to your site code, e.g. "owangie"; leave empty to switch off.
+goatcounter: ""
+
 # Analytics
 analytics:
   provider               :  "false" # false (default), "google", "google-universal", "google-analytics-4", "custom"
