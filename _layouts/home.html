@@ -109,6 +109,8 @@
     .repo svg { flex: none; fill: var(--muted); }
     .repo .lang { font-size: 12px; color: var(--muted); }
     .codegroup { margin-bottom: 8px; }
+    .hero .hero-intro p { font-size: 17px; margin: 0 0 12px; max-width: 620px; }
+    .hero .hero-intro { margin-bottom: 26px; }
     .credit-line { font-size: 12px; margin: 8px 0 0; text-transform: none; letter-spacing: 0; }
     .credit-line a { color: inherit; }
     .more { font-family: var(--sans); font-size: 14px; margin: 20px 0 0; }
@@ -302,7 +304,12 @@
     <div class="hero-text">
     <p class="eyebrow">Data scientist · Evaluation and AI</p>
     <h1>{{ site.author.name }}</h1>
-    <p>I find the patterns and the storyline in development data, catch the early signals, and make results measurable. For the text, I build large language model (LLM) pipelines that turn thousands of project documents into structured, citable evidence. The method is close to an auction house specialist's: trace the story from its marks and records, and claim only what the evidence supports.</p>
+    <div class="hero-intro">
+    <p>I work with multilateral financial and project data, mostly at the Green Climate Fund and UNDP.</p>
+    <p>I read a lot of project documents, more than 100,000 at this point. I build tools with large language models to pull evidence out of them, and each tool has to show its reasoning, not just its answer.</p>
+    <p>The other half of the job is less exciting and more important: checking the numbers. Sometimes they don't hold up. When that happens, I investigate, quality-assure what I find, and document it so others can follow the trail.</p>
+    <p>Then I build the story. I turn the numbers and early signals into visuals, narratives and recommendations that people can act on.</p>
+    </div>
     <div class="btns">
       <a class="btn primary" href="#visuals">See the collection</a>
       <a class="btn" href="https://www.linkedin.com/in/{{ site.author.linkedin }}/">LinkedIn</a>
