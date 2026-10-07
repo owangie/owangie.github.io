@@ -24,6 +24,11 @@
       year: 2024
       desc: "Map-reduce summarisation with LangChain and GPT-4 over UNDP programme evaluation text with more than 100 text columns, to answer one question: what context, opportunities and challenges did country offices face in 2023?"
       data: "Not shared: the evaluation data is internal to UNDP."
+    - name: "storyscope-writing-skill"
+      year: 2026
+      desc: "A writing skill for Claude and other language models built on the StoryScope study (Russell et al. 2026, COLM), which separates human from AI fiction by narrative structure alone. It turns the 30 core features and per-model fingerprints into a drafting workflow and an audit of six default patterns. Unofficial; not endorsed by the authors."
+      walkthrough: "/writing/storyscope-human-and-ai-stories/"
+      data: "Uses the authors' released feature file; a script recomputes the quoted figures."
     - name: "gcf-writing-coach"
       year: 2026
       desc: "A command-line assistant that rewrites, reviews and drafts text in evaluation register, driven by a single system prompt template."
