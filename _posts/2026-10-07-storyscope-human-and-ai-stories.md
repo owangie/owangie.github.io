@@ -2,7 +2,7 @@
 featured: true
 layout: note
 title: "The story is in the structure: what StoryScope found about human and AI fiction"
-date: 2026-10-08
+date: 2026-10-07
 permalink: /writing/storyscope-human-and-ai-stories/
 excerpt: "A study of 61,608 stories finds that AI fiction can be told apart from human fiction by its structure alone, without looking at a single word choice. What the patterns are, what I take from them for evaluation work, and a writing skill I built from the paper."
 ---
