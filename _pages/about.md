@@ -17,8 +17,8 @@ redirect_from:
   <li><span>2024</span><b>Green Climate Fund</b><i>Independent Evaluation Unit</i></li>
 </ol>
 
-I'm an evaluation associate at the Green Climate Fund's Independent Evaluation Unit in Korea. Most weeks I'm either building a language model pipeline to read project documents, or checking whether a number in a portfolio dataset is what it claims to be.
+Outside my nine to six, I code. Most of it starts with a paper I can't stop thinking about: a study of [language models that hand your prompt back](/writing/when-the-model-echoes-the-prompt/), another on [how AI stories differ from human ones](/writing/storyscope-human-and-ai-stories/), an old graph algorithm that turned out to [answer a question about neighbouring countries](/writing/neighbours-graph-theory/). I try the method on something real and write up what I find.
 
-Some of that work travels. My analysis of language and approval times ended up in a Board paper, [GCF/B.43/Inf.12](https://www.greenclimate.fund/board-document/gcf-b43-inf12). Before the Fund, I spent four years at UNDP in New York building the dashboards country offices used to follow their results.
+The papers I reach for are usually about meaning: semantic search, text classification, how a model decides what a passage is about.
 
-For a while I also helped at an auction house. I have a soft spot for Chinese antiques.
+Away from the screen, I like antiques, Chinese ones especially.
