@@ -25,6 +25,8 @@ Each story was turned into a structured template and scored on 304 narrative fea
 
 **The models think alike. People do not.** The five models sit in one tight cluster of narrative choices, and human stories as a group sit apart from it, although many individual stories overlap. Given the same prompt, the human story was the most unusual of the six versions 57.8% of the time, where chance would be 16.7%. On average, human stories ranked at the 71st percentile for rarity, AI stories at the 49th.
 
+<figure style="margin:20px 0"><img src="/images/storyscope-rarity-by-author.png" alt="Violin plot of narrative rarity percentiles for human, GPT, Claude, DeepSeek, Kimi and Gemini stories; human stories sit higher, around 0.71, while the five models cluster near 0.5" loading="lazy" style="width:100%;background:#fff"><figcaption style="font-size:13px;color:var(--muted);font-style:italic">How unusual each story is compared with the rest of the corpus. Human stories lean toward the rare end; the five models sit around the middle. The shapes still overlap a great deal. Figure 5 from Russell et al. (2026), released under CC0.</figcaption></figure>
+
 The differences come down to a handful of habits:
 
 | Habit | AI stories | Human stories |
