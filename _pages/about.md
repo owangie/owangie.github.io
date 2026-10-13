@@ -17,8 +17,8 @@ redirect_from:
   <li><span>2024</span><b>Green Climate Fund</b><i>Independent Evaluation Unit</i></li>
 </ol>
 
-Most of what I build starts with a paper. A study of [language models that hand your prompt back](/writing/when-the-model-echoes-the-prompt/). Another on [how AI stories differ from human ones](/writing/storyscope-human-and-ai-stories/). An old graph algorithm that turned out to [answer a question about neighbouring countries](/writing/neighbours-graph-theory/). I try the method on something real and see what happens.
+Most of what I build here starts with somebody else's paper. Jenna Russell and her co-authors showed that AI fiction gives itself away in its structure, so I turned their findings into [a writing skill](/writing/storyscope-human-and-ai-stories/). A paper called *Mirror, Mirror in the Wall* caught small models copying the prompt back as their answer, and I wrote [a short check for it](/writing/when-the-model-echoes-the-prompt/). Breadth-first search is older than I am, and it still sorted [multi-country projects by their neighbours](/writing/neighbours-graph-theory/).
 
-The papers I reach for are usually about meaning: semantic search, text classification, how a model decides what a passage is about.
+Some ideas are still waiting. I have meant to test Anthropic's contextual retrieval on evaluation reports for a while now.
 
 Away from the screen, I like antiques, Chinese ones especially.
