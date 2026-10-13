@@ -17,7 +17,7 @@ redirect_from:
   <li><span>2024</span><b>Green Climate Fund</b><i>Independent Evaluation Unit</i></li>
 </ol>
 
-Outside my nine to six, I code. Most of it starts with a paper I can't stop thinking about: a study of [language models that hand your prompt back](/writing/when-the-model-echoes-the-prompt/), another on [how AI stories differ from human ones](/writing/storyscope-human-and-ai-stories/), an old graph algorithm that turned out to [answer a question about neighbouring countries](/writing/neighbours-graph-theory/). I try the method on something real and write up what I find.
+Most of what I build starts with a paper. A study of [language models that hand your prompt back](/writing/when-the-model-echoes-the-prompt/). Another on [how AI stories differ from human ones](/writing/storyscope-human-and-ai-stories/). An old graph algorithm that turned out to [answer a question about neighbouring countries](/writing/neighbours-graph-theory/). I try the method on something real and see what happens.
 
 The papers I reach for are usually about meaning: semantic search, text classification, how a model decides what a passage is about.
 
